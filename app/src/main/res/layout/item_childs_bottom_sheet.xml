@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/imgProfile"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginVertical="@dimen/_12sdp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_image_parents_bsheet"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_user_placeholder_new"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:riv_corner_radius="@dimen/_8sdp" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/font_regular"
+            android:text="Dale Elliott"
+            android:textColor="@color/colroBlue"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintLeft_toRightOf="@id/imgProfile"
+            app:layout_constraintRight_toLeftOf="@id/tvIsAbsent"
+            app:layout_constraintTop_toTopOf="@id/imgProfile" />
+
+        <TextView
+            android:id="@+id/tvIsAbsent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/font_regular"
+            android:text="Absent"
+            android:textColor="@color/red"
+            android:textSize="@dimen/_14ssp"
+            android:visibility="gone"
+            app:layout_constraintLeft_toRightOf="@id/tvName"
+            app:layout_constraintRight_toLeftOf="@id/tvAddNote"
+            app:layout_constraintTop_toTopOf="@id/imgProfile" />
+
+        <TextView
+            android:id="@+id/tvParentNote"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/bg_tv_time"
+            android:backgroundTint="@color/old_lace"
+            android:paddingHorizontal="@dimen/_5sdp"
+            android:textColor="@color/red"
+            android:textSize="@dimen/_12ssp"
+            android:visibility="gone"
+            app:layout_constraintLeft_toRightOf="@id/imgProfile"
+            app:layout_constraintRight_toLeftOf="@id/iv"
+            app:layout_constraintTop_toBottomOf="@id/tvName" />
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/tvAddNote"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginHorizontal="@dimen/_12sdp"-->
+        <!--            android:fontFamily="@font/font_regular"-->
+        <!--            android:padding="5dp"-->
+        <!--            android:background="@color/quantum_yellow"-->
+        <!--            android:text="Add Note"-->
+        <!--            android:textColor="@color/colorOrange"-->
+        <!--            android:textSize="@dimen/_11ssp"-->
+        <!--            android:visibility=""-->
+        <!--            app:layout_constraintBottom_toBottomOf="@id/imgProfile"-->
+        <!--            app:layout_constraintRight_toLeftOf="@id/iv"-->
+        <!--            app:layout_constraintTop_toTopOf="@id/imgProfile" />-->
+
+        <TextView
+            android:id="@+id/tvAddNote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:background="@drawable/bg_tv_time"
+            android:backgroundTint="@color/old_lace"
+            android:paddingHorizontal="@dimen/_5sdp"
+            android:text="Add Note"
+            android:textColor="@color/colorYellow"
+            android:textSize="@dimen/_12ssp"
+            android:visibility="gone"
+            app:layout_constraintRight_toLeftOf="@id/iv"
+            app:layout_constraintTop_toTopOf="@id/tvName" />
+
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginEnd="@dimen/_24sdp"
+            android:fontFamily="@font/font_regular"
+            android:src="@drawable/ic_box_new"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="imgProfile,tvParentNote" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginVertical="@dimen/_12sdp"
+            android:alpha="0.5"
+            android:background="@color/txt_white_gray"
+            app:layout_constraintTop_toBottomOf="@id/b" />
+
+
+        <Button
+            android:id="@+id/btnDisable"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:alpha="0.7"
+            android:background="@drawable/bg_et_additional_comment"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/imgProfile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/imgProfile" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

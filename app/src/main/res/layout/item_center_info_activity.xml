@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="0dp"
+        app:cardUseCompatPadding="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_10sdp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_user_placeholder" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:fontFamily="@font/font_semi_bold"
+                android:text="Roy Hodges"
+                android:textColor="@color/colroBlue"
+                android:textSize="@dimen/_18ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cvImage"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tvUserType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_et_search"
+                android:backgroundTint="@color/old_lace"
+                android:fontFamily="@font/font_regular"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:text="Staff"
+                android:textColor="@color/colorYellow"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toEndOf="@id/cvImage"
+                app:layout_constraintStart_toStartOf="@id/tvName"
+                app:layout_constraintTop_toBottomOf="@id/tvName" />
+
+
+            <TextView
+                android:id="@+id/tvExp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:fontFamily="@font/fon_light"
+                android:text="EXPERIENCE"
+                android:textAllCaps="true"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintEnd_toStartOf="@id/tvCert"
+                app:layout_constraintStart_toStartOf="@id/cvImage"
+                app:layout_constraintTop_toBottomOf="@id/cvImage" />
+
+            <TextView
+                android:id="@+id/tvCert"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fon_light"
+                android:text="Certifications"
+                android:textAllCaps="true"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintStart_toEndOf="@id/tvExp"
+                app:layout_constraintTop_toBottomOf="@id/cvImage" />
+
+
+            <TextView
+                android:id="@+id/tvExpValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/font_regular"
+                android:text="4 Year"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintEnd_toEndOf="@id/tvExp"
+                app:layout_constraintStart_toStartOf="@id/tvExp"
+                app:layout_constraintTop_toBottomOf="@id/tvExp" />
+
+            <TextView
+                android:id="@+id/tvCertificatieVal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/font_regular"
+                android:text="Early Childhood Education"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintStart_toStartOf="@id/tvCert"
+
+                app:layout_constraintTop_toBottomOf="@id/tvCert" />
+
+
+            <TextView
+                android:id="@+id/tvIsEducation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/font_regular"
+                android:text="Continuing Education"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toStartOf="@id/tvExpValue"
+                app:layout_constraintTop_toBottomOf="@id/tvExpValue" />
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:cardCornerRadius="@dimen/_15sdp"
+                app:cardElevation="0dp"
+
+                app:cardUseCompatPadding="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvIsEducation">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.7"
+                    android:background="@color/blue_grey_100_alpha_13"
+                    android:fontFamily="@font/font_regular"
+                    android:padding="@dimen/_8sdp"
+                    android:text="@string/str_cedu_not"
+                    android:textColor="@color/colorMedBlack"
+                    android:textSize="@dimen/_10ssp" />
+
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

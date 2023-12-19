@@ -1,0 +1,728 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/_10sdp"
+        tools:context=".activities.providers.reports.DailyReportActivity">
+
+        <RelativeLayout
+            android:id="@+id/toolBar"
+            android:layout_width="0dp"
+            android:layout_height="?actionBarSize"
+            android:background="@color/colorWhite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/font_regular"
+                android:text="Activity"
+                android:textColor="@color/colorLoginBlack"
+                android:textSize="@dimen/_14ssp" />
+
+            <LinearLayout
+                android:id="@+id/llSendMessge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_message" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/font_regular"
+                    android:text="Chat with\n provider"
+                    android:textColor="@color/colorLoginBlack"
+                    android:textSize="@dimen/_8sdp" />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolBar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".activities.providers.reports.DailyReportActivity">
+
+                <TextView
+                    android:id="@+id/tvChild"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/font_regular"
+                    android:text="Select Child"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvSpinnerCard"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvChild">
+
+                    <Spinner
+                        android:id="@+id/spChild"
+                        style="@style/SpinnerTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_10sdp" />
+
+                    <TextView
+                        android:id="@+id/tvSpinnerChildesNoData"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/font_semi_bold"
+                        android:gravity="center"
+                        android:text="No Child Found"
+                        android:textColor="@color/colorLightGrey"
+                        android:textSize="@dimen/_10ssp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/ivChild"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/tvdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:fontFamily="@font/font_regular"
+                    android:text="Select by Date"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cvSpinnerCard" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvdate"
+
+                    />
+
+
+                <TextView
+                    android:id="@+id/tvThemeHead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:fontFamily="@font/font_regular"
+                    android:text="Theme"
+                    android:textColor="@color/colroBlue"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintStart_toStartOf="@id/tvdate"
+                    app:layout_constraintTop_toBottomOf="@id/recDate" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvTheme"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tvThemeHead"
+                    app:layout_constraintTop_toBottomOf="@id/tvThemeHead"
+
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:orientation="vertical"
+                        android:paddingBottom="@dimen/_10sdp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:fontFamily="@font/font_regular"
+                            android:text="Child Activity Files &amp; Images"
+                            android:textColor="@color/grey_600"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recThemes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="15dp"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintEnd_toEndOf="@id/etAmount"
+                            app:layout_constraintStart_toStartOf="@id/etAmount"
+                            app:layout_constraintTop_toBottomOf="@id/tvUploadPurchase"
+                            tools:itemCount="2"
+                            tools:listitem="@layout/item_file" />
+
+                        <TextView
+                            android:id="@+id/tvNoThemesData"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_marginHorizontal="@dimen/_12sdp"
+                            android:layout_marginVertical="@dimen/_12sdp"
+                            android:fontFamily="@font/font_semi_bold"
+                            android:gravity="center"
+                            android:text="No Entry"
+                            android:textColor="@color/colorLightGrey"
+                            android:textSize="@dimen/_10ssp"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="@id/etAmount"
+                            app:layout_constraintStart_toStartOf="@id/etAmount"
+                            app:layout_constraintTop_toBottomOf="@id/tvUploadPurchase" />
+
+
+                        <TextView
+                            android:id="@+id/btnChooseThemeFile"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:background="@drawable/bg_choose_file"
+                            android:paddingHorizontal="@dimen/_15sdp"
+                            android:paddingVertical="@dimen/_5sdp"
+                            android:text="Choose Files"
+                            android:textColor="@color/colroBlue"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/tvThemeAdditionalComment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:fontFamily="@font/font_regular"
+                            android:text="Additional Comments"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/etThemeDesc"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_70sdp"
+                            android:layout_marginHorizontal="@dimen/_15sdp"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:background="@drawable/bg_et_additional_comment"
+                            android:fontFamily="@font/font_regular"
+                            android:gravity="top"
+                            android:hint="Comments..."
+                            android:inputType="textMultiLine"
+                            android:padding="@dimen/_5sdp"
+                            android:textColor="@color/grey_900_alpha_50"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvDesc" />
+
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginEnd="@dimen/_15sdp"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/tvSubmitTheme"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/font_regular"
+                                android:gravity="center"
+                                android:padding="@dimen/_4sdp"
+                                android:text="Submit"
+                                android:textColor="@color/colroBlue"
+                                android:textSize="@dimen/_12ssp" />
+
+                            <ProgressBar
+                                android:id="@+id/progressTheme"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_centerInParent="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:visibility="gone" />
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/tvReading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:fontFamily="@font/font_regular"
+                    android:text="Reading/Literacy"
+                    android:textColor="@color/colroBlue"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintStart_toStartOf="@id/recDate"
+                    app:layout_constraintTop_toBottomOf="@id/cvTheme" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvreading"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tvThemeHead"
+                    app:layout_constraintTop_toBottomOf="@id/tvReading"
+
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:orientation="vertical"
+                        android:paddingBottom="@dimen/_10sdp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:fontFamily="@font/font_regular"
+                            android:text="Child Activity Files &amp; Images"
+                            android:textColor="@color/grey_600"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recLitracy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="15dp"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintEnd_toEndOf="@id/etAmount"
+                            app:layout_constraintStart_toStartOf="@id/etAmount"
+                            app:layout_constraintTop_toBottomOf="@id/tvUploadPurchase"
+                            tools:itemCount="2"
+                            tools:listitem="@layout/item_file" />
+
+                        <TextView
+                            android:id="@+id/tvNoLitracyData"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_marginHorizontal="@dimen/_12sdp"
+                            android:layout_marginVertical="@dimen/_12sdp"
+                            android:fontFamily="@font/font_semi_bold"
+                            android:gravity="center"
+                            android:text="No Entry"
+                            android:textColor="@color/colorLightGrey"
+                            android:textSize="@dimen/_10ssp"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="@id/etAmount"
+                            app:layout_constraintStart_toStartOf="@id/etAmount"
+                            app:layout_constraintTop_toBottomOf="@id/tvUploadPurchase" />
+
+
+                        <TextView
+                            android:id="@+id/btnLiteracy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:background="@drawable/bg_choose_file"
+                            android:paddingHorizontal="@dimen/_15sdp"
+                            android:paddingVertical="@dimen/_5sdp"
+                            android:text="Choose Files"
+                            android:textColor="@color/colroBlue"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/tvReadingAdditionalComment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:fontFamily="@font/font_regular"
+                            android:text="Additional Comments"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/etReadingDesc"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_70sdp"
+                            android:layout_marginHorizontal="@dimen/_15sdp"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:background="@drawable/bg_et_additional_comment"
+                            android:fontFamily="@font/font_regular"
+                            android:gravity="top"
+                            android:hint="Comments..."
+                            android:inputType="textMultiLine"
+                            android:padding="@dimen/_5sdp"
+                            android:textColor="@color/grey_900_alpha_50"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvDesc" />
+
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginEnd="@dimen/_15sdp"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/tvSubmitReading"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/font_regular"
+                                android:gravity="center"
+                                android:padding="@dimen/_4sdp"
+                                android:text="Submit"
+                                android:textColor="@color/colroBlue"
+                                android:textSize="@dimen/_12ssp" />
+
+                            <ProgressBar
+                                android:id="@+id/progressReading"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_centerInParent="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:visibility="gone" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/tvMath"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:fontFamily="@font/font_regular"
+                    android:text="Math/Science"
+                    android:textColor="@color/colroBlue"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintStart_toStartOf="@id/recDate"
+                    app:layout_constraintTop_toBottomOf="@id/cvreading" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvMath"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tvThemeHead"
+                    app:layout_constraintTop_toBottomOf="@id/tvMath">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:orientation="vertical"
+                        android:paddingBottom="@dimen/_10sdp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:fontFamily="@font/font_regular"
+
+                            android:text="Child Activity Files &amp; Images"
+                            android:textColor="@color/grey_600"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recMathScience"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="15dp"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintEnd_toEndOf="@id/etAmount"
+                            app:layout_constraintStart_toStartOf="@id/etAmount"
+                            app:layout_constraintTop_toBottomOf="@id/tvUploadPurchase"
+                            tools:itemCount="2"
+                            tools:listitem="@layout/item_file" />
+
+                        <TextView
+                            android:id="@+id/tvNoMathScienceData"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_marginHorizontal="@dimen/_12sdp"
+                            android:layout_marginVertical="@dimen/_12sdp"
+                            android:fontFamily="@font/font_semi_bold"
+                            android:gravity="center"
+                            android:text="No Entry"
+                            android:textColor="@color/colorLightGrey"
+                            android:textSize="@dimen/_10ssp"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="@id/etAmount"
+                            app:layout_constraintStart_toStartOf="@id/etAmount"
+                            app:layout_constraintTop_toBottomOf="@id/tvUploadPurchase" />
+
+                        <TextView
+                            android:id="@+id/btnMath"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:background="@drawable/bg_choose_file"
+                            android:paddingHorizontal="@dimen/_15sdp"
+                            android:paddingVertical="@dimen/_5sdp"
+                            android:text="Choose Files"
+                            android:textColor="@color/colroBlue"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/tvMathAdditionalComment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:fontFamily="@font/font_regular"
+                            android:text="Additional Comments"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/etScienceDesc"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_70sdp"
+                            android:layout_marginHorizontal="@dimen/_15sdp"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:background="@drawable/bg_et_additional_comment"
+                            android:fontFamily="@font/font_regular"
+                            android:gravity="top"
+                            android:hint="Comments..."
+                            android:inputType="textMultiLine"
+                            android:padding="@dimen/_5sdp"
+                            android:textColor="@color/grey_900_alpha_50"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvDesc" />
+
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginEnd="@dimen/_15sdp"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/tvSubmitScience"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/font_regular"
+                                android:gravity="center"
+                                android:padding="@dimen/_4sdp"
+                                android:text="Submit"
+                                android:textColor="@color/colroBlue"
+                                android:textSize="@dimen/_12ssp" />
+
+                            <ProgressBar
+                                android:id="@+id/progressScience"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_centerInParent="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:visibility="gone" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <RelativeLayout
+                    android:id="@+id/btnNext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:background="@drawable/bg_btn_login"
+                    android:padding="@dimen/_15sdp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cvMath">
+
+                    <TextView
+                        android:id="@+id/tvNext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/font_regular"
+                        android:text="Submit"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <ProgressBar
+                        android:id="@+id/progressbar"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/lnrMessage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btnNext">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:src="@drawable/ic_day_care_msg" />
+
+                    <TextView
+                        android:id="@+id/tvAlertMessage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/font_regular"
+                        android:textColor="@color/blue_grey_600"
+                        android:textSize="@dimen/_12ssp" />
+
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/noData"
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    android:elevation="10dp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/recDate">
+                    <!--No record found-->
+                    <RelativeLayout
+                        android:id="@+id/rlNoRecord"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:orientation="vertical"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp">
+
+                            <ImageView
+                                android:id="@+id/ivErrorImage"
+                                android:layout_width="@dimen/_150sdp"
+                                android:layout_height="@dimen/_150sdp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/ic_nothing_found" />
+
+                            <TextView
+                                android:id="@+id/tvErrorMessage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="14dp"
+                                android:fontFamily="@font/font_semi_bold"
+                                android:text="No activity yet"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_12sdp" />
+
+                            <Button
+                                android:id="@+id/retryBtn"
+                                android:layout_width="84dp"
+                                android:layout_height="32dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="@dimen/_20sdp"
+                                android:background="@drawable/bg_corner"
+                                android:fontFamily="@font/font_medium"
+                                android:gravity="center"
+                                android:text="Retry"
+                                android:textAllCaps="false"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="12sp"
+                                android:visibility="gone" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

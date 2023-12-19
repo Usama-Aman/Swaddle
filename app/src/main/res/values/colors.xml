@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">@color/colroBlue</color>
+
+    <color name="colorWhite25">#40ffffff</color>
+
+    <color name="colorWhite25100">#5A5A5A</color>
+
+    <color name="txt_medium_gray">#909090</color>
+    <color name="deep_sea">#008067</color>
+    <color name="txt_white_gray">#D5D5D5</color>
+
+    <color name="emerald">#39C074</color>
+
+    <color name="colorWhiteLight">#D8D8D8</color>
+    <color name="colorGrayLight1">#EDEDED</color>
+    <color name="colorGrayLight5">#F2D2D5DB</color>
+
+    <color name="colorWhite100">@android:color/white</color>
+    <color name="colorGrayLight">#B2B2B2</color>
+    <color name="colorGrayDark">#979797</color>
+    <color name="transparent">#00ffffff</color>
+    <color name="colorWhite75">#BFffffff</color>
+    <color name="colorBlackLight">#202836</color>
+    <color name="colorWhite50">#80ffffff</color>
+    <color name="appGrayEditTextBg">#C8C8C8</color>
+    <color name="appSlightGray">#ECEBEB</color>
+    <color name="colorBlack30">#66000000</color>
+    <color name="colorBlack50">#80000000</color>
+    <color name="colorBlack80">#CC000000</color>
+
+    <color name="colorLoginBlack">#1D1D1D</color>
+    <color name="colroBlue">#33B1F9</color>
+    <color name="colorOrange">#F5A31B</color>
+    <color name="colorWhite">#ffff</color>
+
+    <color name="picton_blue">#47B8FA</color>
+
+    <color name="colorDashBoardBlack">#4F585E</color>
+    <color name="colorDashBoardTextColor">#8F92A1</color>
+    <color name="colorHintGrey">#d0c9d6</color>
+
+    <!--Message Activity Color-->
+    <color name="colorMessageName">#1A051D</color>
+
+    <!--Menu screen text color-->
+    <color name="colorMenuText">#171717</color>
+    <color name="colorMenuViewBg">#f2f2f2</color>
+
+    <!--    Classroom colors code-->
+    <color name="colorLightBlue">#0D4DBBFA</color>
+    <color name="colorLightPink">#0DFFAA1C</color>
+    <color name="colorBgProfile">#0D5263F0</color>
+    <color name="colorBgAdd">#0DF93333</color>
+    <color name="colorLightBlackColor">#801D1D1D</color>
+
+    <!--Selct children text color-->
+    <color name="colorLightGrey">#A5A5A5</color>
+    <color name="colorDivider">#D8D8D8</color>
+
+    <!--Classroom detail children color-->
+    <color name="colorMedBlack">#131313</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorBlack_alpha_30">#4D000000</color>
+    <color name="colorYellow">#F5A31B</color>
+    <color name="colorLightRed">#E23E47</color>
+    <color name="colorRed">#FFDFE0</color>
+    <color name="red">#FF0000</color>
+    <color name="colorTvTime">#7D7D7D</color>
+
+
+    <!--Child profile detail text color-->
+    <color name="shuttle_gray">#636872</color>
+    <color name="seashell">#F1F1F1</color>
+    <color name="old_lace">#FEF9F0</color>
+        <color name="athens_gray">#F9F9FA</color>
+    <color name="martini">#979797</color>
+
+
+    <!--My Profile Color-->
+    <color name="grey_100">#F6F6F6</color>
+
+
+    <color name="blue_grey_400">#7A869A</color>
+    <color name="grey_200">#ECECEC</color>
+
+    <!--staff text color-->
+    <color name="teal_400">#1FB892</color>
+    <color name="grey_700">#636363</color>
+    <color name="cyan_50">#EEFCF8</color>
+    <color name="pink_50">#FEF6F7</color>
+
+    <!--Bototm sheet color-->
+    <color name="light_blue_50">#F1FAFF</color>
+    <color name="blue_grey_600">#656D73</color>
+
+
+    <color name="grey_900_alpha_90">#E61D1D1D</color>
+    <color name="brown_200">#BFBBB5</color>
+
+    <color name="blue_grey_300_alpha_13">#208F92A1</color>
+    <color name="blue_grey_100_alpha_13">#108F92A1</color>
+    <color name="colorDaysCenter">#2F2F2F</color>
+
+    <color name="color_grey_300">#667D6363</color>
+
+    <color name="colorSilver">#D3D3D3</color>
+    <color name="blue_grey">#8f92a1</color>
+
+    <color name="colorGhost">#C0C0CC</color>
+
+    <color name="grey_500">#9E9E9E</color>
+
+    <color name="deep_purple_50">#ECEBED</color>
+
+    <color name="grey_300_alpha_30">#4DD0D0D0</color>
+    <color name="grey_300">#D0D0D0</color>
+    <color name="grey_900_alpha_50">#801D1D1D</color>
+
+    <color name="grey_800">#505050</color>
+
+    <color name="grey_50">#FAFAFA</color>
+    <color name="grey_600">#767676</color>
+
+    <color name="grey_500_alpha_20">#33979797</color>
+
+    <color name="blue_grey_300">#0D8F92A1</color>
+
+    <color name="grey_900">#202020</color>
+
+
+    <color name="green_800">#1B8C27</color>
+
+    <color name="indigo_900">#172B4D</color>
+
+        <color name="blue_700">#1A6ADE</color>
+
+</resources>

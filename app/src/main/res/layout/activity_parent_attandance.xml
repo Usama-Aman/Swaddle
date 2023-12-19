@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.parent.ParentAttendanceActivity">
+
+
+        <RelativeLayout
+            android:id="@+id/toolBar"
+            android:layout_width="0dp"
+            android:layout_height="?actionBarSize"
+            android:background="@color/colorWhite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="@dimen/_26sdp"
+                android:layout_height="@dimen/_26sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:padding="@dimen/_5sdp"
+                android:clickable="true"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/font_bold"
+                android:text="Attendance"
+                android:textColor="@color/colorLoginBlack"
+                android:textSize="@dimen/_14ssp" />
+
+        </RelativeLayout>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            app:layout_constraintBottom_toTopOf="@id/btnSubmit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolBar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    android:id="@+id/tvClass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:fontFamily="@font/font_regular"
+                    android:text="Select Classroom"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_10ssp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvSpinnerClass"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    android:visibility="gone"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvClass">
+
+                    <TextView
+                        android:id="@+id/tvSpinnerClassRoomNoData"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/font_semi_bold"
+                        android:gravity="center"
+                        android:text="No Classroom Found"
+                        android:textColor="@color/colorLightGrey"
+                        android:textSize="@dimen/_10ssp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/ivChild"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Spinner
+                        android:id="@+id/spClassRoom"
+                        style="@style/SpinnerTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_10sdp" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/tvChild"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/font_regular"
+                    android:text="Select Child"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cvSpinnerClass" />
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvSpinnerCard"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvChild">
+
+                    <TextView
+                        android:id="@+id/tvSpinnerChildesNoData"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/font_semi_bold"
+                        android:gravity="center"
+                        android:text="No Child Found"
+                        android:textColor="@color/colorLightGrey"
+                        android:textSize="@dimen/_10ssp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/ivChild"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Spinner
+                        android:id="@+id/spChild"
+                        style="@style/SpinnerTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+
+                        />
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <TextView
+                    android:id="@+id/tvdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:fontFamily="@font/font_semi_bold"
+
+                    android:text="Select by Date"
+                    android:textColor="@color/colorDashBoardBlack"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cvSpinnerCard" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvdate" />
+
+
+                <include
+                    android:id="@+id/layReminderAttendance"
+                    layout="@layout/reminder_attendance_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/recDate" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvForm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="2dp"
+                    app:cardUseCompatPadding="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layReminderAttendance"
+
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_weight="2"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/_24sdp"
+                                        android:layout_height="@dimen/_23sdp"
+                                        android:src="@drawable/ic_arrival" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/font_semi_bold"
+                                        android:text="Arrival"
+                                        android:textColor="@color/grey_800"
+                                        android:textSize="@dimen/_16ssp" />
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:text="Arrival Time"
+                                    android:textColor="@color/colorDashBoardTextColor"
+                                    android:textSize="@dimen/_8ssp" />
+
+
+
+                                <TextView
+                                    android:id="@+id/tvArrival"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:background="@drawable/bg_tv_time"
+                                    android:backgroundTint="@color/grey_100"
+                                    android:drawableLeft="@drawable/ic_clock"
+                                    android:fontFamily="@font/font_semi_bold"
+                                    android:hint="--:--"
+                                    android:padding="@dimen/_5sdp"
+                                    android:textColor="@color/grey_800"
+                                    android:textSize="@dimen/_10ssp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:text="Dropped off by"
+                                    android:textColor="@color/colorDashBoardTextColor"
+                                    android:textSize="@dimen/_8ssp" />
+
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cvSpinnerDropOff"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:background="@drawable/bg_et_classrooms"
+                                    android:drawableStart="@drawable/ic_acc_circle_small"
+                                    android:drawablePadding="@dimen/_5sdp"
+                                    android:elevation="@dimen/_2sdp"
+                                    android:fontFamily="@font/font_semi_bold"
+                                    android:hint="Enter Name"
+                                    android:inputType="text"
+                                    android:maxEms="50"
+                                    android:maxLines="1"
+                                    android:paddingTop="@dimen/_10sdp"
+                                    android:paddingBottom="@dimen/_10sdp"
+                                    android:textColor="@color/colorLoginBlack"
+                                    android:textSize="@dimen/_10ssp"
+                                    android:theme="@style/Theme.MaterialComponents.Light"
+                                    app:cardCornerRadius="@dimen/_10sdp">
+
+                                    <TextView
+                                        android:id="@+id/tvSpinnerDropOffNoData"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/_30sdp"
+                                        android:layout_marginStart="@dimen/_10sdp"
+                                        android:fontFamily="@font/font_semi_bold"
+                                        android:gravity="center"
+                                        android:text="No Entry"
+                                        android:textColor="@color/colorLightGrey"
+                                        android:textSize="@dimen/_10ssp"
+                                        android:visibility="gone"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintStart_toEndOf="@id/ivChild"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <Spinner
+                                        android:id="@+id/spDropOff"
+                                        style="@style/SpinnerTheme"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content" />
+
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <!--                                <EditText-->
+                                <!--                                    android:id="@+id/etDropOffBy"-->
+                                <!--                                    android:layout_width="match_parent"-->
+                                <!--                                    android:layout_height="wrap_content"-->
+                                <!--                                    android:layout_marginTop="@dimen/_5sdp"-->
+                                <!--                                    android:background="@drawable/bg_et_classrooms"-->
+                                <!--                                    android:drawableLeft="@drawable/ic_acc_circle_small"-->
+                                <!--                                    android:drawablePadding="@dimen/_5sdp"-->
+                                <!--                                    android:fontFamily="@font/font_semi_bold"-->
+                                <!--                                    android:hint="Enter Name"-->
+                                <!--                                    android:inputType="text"-->
+                                <!--                                    android:maxEms="50"-->
+                                <!--                                    android:maxLines="1"-->
+                                <!--                                    android:padding="@dimen/_10sdp"-->
+                                <!--                                    android:textColor="@color/colorLoginBlack"-->
+                                <!--                                    android:textSize="@dimen/_10ssp"-->
+
+                                <!--                                    />-->
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/_24sdp"
+                                        android:layout_height="@dimen/_23sdp"
+                                        android:padding="5dp"
+                                        android:src="@drawable/ic_departure" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/font_semi_bold"
+                                        android:text="Departure"
+                                        android:textColor="@color/grey_800"
+                                        android:textSize="@dimen/_16ssp" />
+
+                                </LinearLayout>
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:text="Departure Time"
+                                    android:textColor="@color/colorDashBoardTextColor"
+                                    android:textSize="@dimen/_8ssp" />
+
+
+
+                                <TextView
+                                    android:id="@+id/tvDeparture"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:background="@drawable/bg_tv_time"
+                                    android:backgroundTint="@color/grey_100"
+                                    android:drawableLeft="@drawable/ic_clock"
+                                    android:fontFamily="@font/font_semi_bold"
+                                    android:hint="--:--"
+                                    android:padding="@dimen/_5sdp"
+                                    android:textColor="@color/grey_800"
+                                    android:textSize="@dimen/_10ssp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:text="Picked up by"
+                                    android:textColor="@color/colorDashBoardTextColor"
+                                    android:textSize="@dimen/_8ssp" />
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cvSpinnerPickedBy"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:background="@drawable/bg_et_classrooms"
+                                    android:drawableStart="@drawable/ic_acc_circle_small"
+                                    android:drawablePadding="@dimen/_5sdp"
+                                    android:elevation="@dimen/_2sdp"
+                                    android:fontFamily="@font/font_semi_bold"
+                                    android:hint="Enter Name"
+                                    android:inputType="text"
+                                    android:maxEms="50"
+                                    android:maxLines="1"
+                                    android:paddingTop="@dimen/_10sdp"
+                                    android:paddingBottom="@dimen/_10sdp"
+                                    android:textColor="@color/colorLoginBlack"
+                                    android:textSize="@dimen/_10ssp"
+                                    android:theme="@style/Theme.MaterialComponents.Light"
+                                    app:cardCornerRadius="@dimen/_8sdp">
+
+                                    <TextView
+                                        android:id="@+id/tvSpinnerPickedByNoData"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/_30sdp"
+                                        android:layout_marginStart="@dimen/_10sdp"
+                                        android:fontFamily="@font/font_semi_bold"
+                                        android:gravity="center"
+                                        android:text="No Entry"
+                                        android:textColor="@color/red"
+                                        android:textSize="@dimen/_10ssp"
+                                        android:visibility="gone"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintStart_toEndOf="@id/ivChild"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <Spinner
+                                        android:id="@+id/spPickedBy"
+                                        style="@style/SpinnerTheme"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content" />
+
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <!--                                <EditText-->
+                                <!--                                    android:id="@id/etPickedBy"-->
+                                <!--                                    android:layout_width="match_parent"-->
+                                <!--                                    android:layout_height="wrap_content"-->
+                                <!--                                    android:layout_marginTop="@dimen/_5sdp"-->
+                                <!--                                    android:background="@drawable/bg_et_classrooms"-->
+                                <!--                                    android:drawableLeft="@drawable/ic_acc_circle_small"-->
+                                <!--                                    android:drawablePadding="@dimen/_5sdp"-->
+                                <!--                                    android:fontFamily="@font/font_semi_bold"-->
+                                <!--                                    android:hint="Enter Name"-->
+                                <!--                                    android:inputType="text"-->
+                                <!--                                    android:maxEms="50"-->
+                                <!--                                    android:maxLines="1"-->
+                                <!--                                    android:padding="@dimen/_10sdp"-->
+                                <!--                                    android:textColor="@color/colorLoginBlack"-->
+                                <!--                                    android:textSize="@dimen/_10ssp" />-->
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tvReport"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:fontFamily="@font/font_regular"
+                            android:text="Daily reports"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/_12ssp" />
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="@dimen/_60sdp">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recDailyReport"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_15sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:layout_marginBottom="@dimen/_10sdp"
+                                android:nestedScrollingEnabled="false" />
+
+                            <TextView
+                                android:id="@+id/tvNoReportsFound"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:fontFamily="@font/font_semi_bold"
+                                android:gravity="center"
+                                android:paddingVertical="50dp"
+                                android:text="No Entry"
+                                android:textColor="@color/colorLightGrey"
+                                android:textSize="@dimen/_10ssp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <RelativeLayout
+            android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_36sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:background="@drawable/bg_btn_login"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/tvSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/font_regular"
+                android:gravity="center"
+                android:text="Submit"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_12ssp" />
+
+            <ProgressBar
+                android:id="@+id/progressbar"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="adapter"
+            type="com.android.hilaron.adapter.CountryAdapter" />
+
+        <variable
+            name="model"
+            type="com.android.swaddle.models.CountryDataModel" />
+
+        <variable
+            name="position"
+            type="int" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{()->adapter.onClicked(position)}"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5sdp">
+
+        <TextView
+            android:id="@+id/tv_country_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:fontFamily="@font/font_regular"
+            android:maxLines="1"
+            android:text="@{model.name}"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/_10sdp" />
+
+        <TextView
+            android:id="@+id/tv_country_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:fontFamily="@font/font_regular"
+            android:text="@{model.dial_code}"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/_12sdp" />
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?selectableItemBackground"
+            android:clickable="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_Day"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/font_regular"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/_12sdp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/lnr_Parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:gravity="start"
+                android:padding="@dimen/_5sdp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/icProfile"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:src="@drawable/ic_user_placeholder"
+                    android:visibility="visible" />
+
+                <LinearLayout
+                    android:id="@+id/lnr_TextMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/_15sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_2sdp"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:id="@+id/lnr_Image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone">
+
+                        <RelativeLayout
+                            android:layout_width="@dimen/_200sdp"
+                            android:layout_height="@dimen/_200sdp"
+                            android:id="@+id/rlImage"
+                            android:background="@drawable/bg_my_chat">
+
+                            <com.makeramen.roundedimageview.RoundedImageView
+                                android:id="@+id/iv_Image"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="@dimen/_3sdp"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:layout_marginEnd="@dimen/_3sdp"
+                                android:layout_marginBottom="@dimen/_3sdp"
+                                android:background="@drawable/ic_image_placeholder"
+                                android:scaleType="centerCrop"
+                                app:riv_corner_radius_bottom_left="10dp"
+                                app:riv_corner_radius_bottom_right="10dp" />
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignParentBottom="true"
+                                app:cardBackgroundColor="#88ffffff"
+                                app:cardCornerRadius="@dimen/_15sdp"
+                                app:cardElevation="0dp"
+                                app:cardUseCompatPadding="true">
+
+                                <TextView
+                                    android:id="@+id/tv_ImageTime"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/font_regular"
+                                    android:visibility="gone"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="09:03 am"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="@dimen/_10sdp" />
+
+                            </androidx.cardview.widget.CardView>
+
+                            <ProgressBar
+                                android:id="@+id/progressBar"
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:layout_centerInParent="true"
+                                android:visibility="gone" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/tv_Message"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_other_chat"
+                        android:fontFamily="@font/font_regular"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="@dimen/_8sdp"
+                        android:paddingVertical="@dimen/_5sdp"
+                        android:text="@string/app_name"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/_12sdp"
+                        android:drawablePadding="5dp"/>
+
+
+
+                    <TextView
+                        android:id="@+id/tv_Time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="@font/font_regular"
+                        android:paddingLeft="@dimen/_5sdp"
+                        android:paddingRight="@dimen/_5sdp"
+                        android:text="09:03 AM"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/_9sdp" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    <!--    <com.chauthai.swipereveallayout.SwipeRevealLayout-->
+<!--        android:id="@+id/swipeRevealLayout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:mode="same_level"-->
+<!--        app:dragEdge="right"-->
+<!--        >-->
+
+<!--        &lt;!&ndash; Your secondary layout here &ndash;&gt;-->
+<!--        <FrameLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="@color/colorLightRed">-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginHorizontal="30dp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:text="Delete"-->
+<!--                android:fontFamily="@font/font_medium"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="14sp"-->
+<!--                />-->
+<!--        </FrameLayout>-->
+
+<!--        &lt;!&ndash; Your main layout here &ndash;&gt;-->
+
+<!--    </com.chauthai.swipereveallayout.SwipeRevealLayout>-->
+
+</layout>

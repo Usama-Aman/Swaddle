@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.common.VerifyOtpActivity">
+
+        <LinearLayout
+            android:id="@+id/layViewBack"
+            app:layout_constraintStart_toStartOf="parent"
+            android:clickable="true"
+            android:paddingHorizontal="@dimen/_15sdp"
+            android:background="?selectableItemBackground"
+            android:paddingVertical="@dimen/_20sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/imgViewBack"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:src="@drawable/ic_cross"
+                app:tint="@color/colorLoginBlack" />
+
+        </LinearLayout>
+
+
+
+
+        <ImageView
+            android:id="@+id/imgViewMainLogo"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:src="@drawable/img_main_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvOtpHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:fontFamily="@font/font_bold"
+            android:text="Verify your identity"
+            android:textColor="@color/colorLoginBlack"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgViewMainLogo" />
+
+
+        <TextView
+            android:id="@+id/tvOtpMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/font_regular"
+            android:gravity="center"
+            android:text="We have just sent a code to "
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvOtpHeading" />
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font_regular"
+            android:gravity="center"
+            android:text="user@email.com"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvOtpMessage" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_digit_1"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/selector_edit_text"
+            android:fontFamily="@font/font_regular"
+            android:gravity="center"
+            android:textColor="@color/colorLoginBlack"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_digit_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvEmail" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_digit_2"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@drawable/selector_edit_text"
+            android:fontFamily="@font/font_regular"
+            android:gravity="center"
+            android:textColor="@color/colorLoginBlack"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_digit_1"
+            app:layout_constraintEnd_toStartOf="@+id/tv_digit_3"
+            app:layout_constraintStart_toEndOf="@+id/tv_digit_1"
+            app:layout_constraintTop_toTopOf="@+id/tv_digit_1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_digit_3"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@drawable/selector_edit_text"
+            android:fontFamily="@font/font_regular"
+            android:gravity="center"
+            android:textColor="@color/colorLoginBlack"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_digit_1"
+            app:layout_constraintEnd_toStartOf="@+id/tv_digit_4"
+            app:layout_constraintStart_toEndOf="@+id/tv_digit_2"
+            app:layout_constraintTop_toTopOf="@+id/tv_digit_1" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_digit_4"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:background="@drawable/selector_edit_text"
+            android:fontFamily="@font/font_regular"
+            android:gravity="center"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_digit_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_digit_3"
+            app:layout_constraintTop_toTopOf="@+id/tv_digit_1" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_code"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:color/transparent"
+            android:cursorVisible="false"
+            android:focusable="true"
+            android:gravity="top|start"
+            android:inputType="number"
+            android:maxEms="4"
+            android:maxLength="4"
+            android:textColor="@android:color/transparent"
+            android:textColorHint="@android:color/transparent"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_digit_1"
+            app:layout_constraintEnd_toEndOf="@+id/tv_digit_4"
+            app:layout_constraintStart_toStartOf="@+id/tv_digit_1"
+            app:layout_constraintTop_toTopOf="@+id/tv_digit_1" />
+
+        <LinearLayout
+            android:id="@+id/codeResendLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_code">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/font_regular"
+                android:text="I did\'nt recieve code."
+                android:textColor="@color/colorLightBlackColor"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/tvResendCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:fontFamily="@font/font_bold"
+                android:text="Resend Code"
+                android:clickable="true"
+                android:background="?selectableItemBackground"
+                android:paddingVertical="@dimen/_15sdp"
+                android:textColor="@color/colroBlue"
+                android:textSize="@dimen/_10ssp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvCodeNotMatch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font_regular"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/codeResendLay"
+            android:text="Code did'nt match."
+            android:textColor="@color/colorLightRed"
+            android:textSize="@dimen/_10ssp" />
+
+
+        <RelativeLayout
+            android:id="@+id/btnVerifyCode"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_30sdp"
+            android:background="@drawable/bg_btn_login"
+            app:layout_constraintBottom_toTopOf="@id/lnrForgetLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/tvVerifyCode"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/font_regular"
+                android:gravity="center"
+                android:visibility="gone"
+                android:text="Verify Code"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_12ssp" />
+
+            <ProgressBar
+                android:id="@+id/progressbar"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/lnrForgetLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/font_regular"
+                android:text="By Signing up, you agree to our"
+                android:textColor="@color/colorLightBlackColor"
+                android:textSize="@dimen/_12ssp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/font_bold"
+                android:text="Terms &amp; Conditions"
+                android:textColor="@color/colroBlue"
+
+                android:textSize="@dimen/_10ssp" />
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.android.swaddle">
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the "MyLocation" functionality.
+    -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+
+    <application
+        android:name=".baseClasses.BaseApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/img_main_logo"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@drawable/img_main_logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".activities.providers.PopupActivity"
+            android:exported="false" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity android:name=".payment_screens.AddCreditActivity" />
+        <activity android:name=".activities.common.TransactionHistoryActivity" />
+        <activity android:name=".activities.common.RegistrationSuccessfulActivity" />
+        <activity android:name=".activities.providers.reports.ChildIncidentReportActivity" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".activities.providers.reports.IncidentReportDetailsAndUpdate"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".payment_screens.AddBillActivity"
+            android:screenOrientation="portrait">
+
+            <!--
+        <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".payment_screens.PaymentMethodeListActivity">
+
+        </activity>
+        <activity android:name=".payment_screens.AddPaymentMethodesActivity">
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity
+            android:name=".payment_screens.PaymentMethodListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".payment_screens.AddPaymentMethodsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".payment_screens.ParentPaymentMainActivity"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="com.onesignal.NotificationOpened.DEFAULT"
+            android:value="DISABLE" /> <!-- <meta-data -->
+        <!-- android:name="com.onesignal.NotificationAccentColor.DEFAULT" -->
+        <!-- android:value="396674" /> -->
+        <meta-data
+            android:name="com.onesignal.BadgeCount"
+            android:value="ENABLE" />
+
+        <service
+            android:name=".onesignal.OnClearFromRecentService"
+            android:stopWithTask="false" />
+        <service
+            android:name=".onesignal.OnSignalNotificationExtenderService"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE">
+            <intent-filter>
+                <action android:name="com.onesignal.NotificationExtender" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".activities.common.SelectorActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Base.Theme.AppCompat" />
+        <activity
+            android:name=".activities.common.ChangePasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.providers.RelationshipsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.common.RecoverAccountPhoneActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.providers.other_reg_screens.CenterRegistrationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.providers.other_reg_screens.StaffRegistrationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.providers.other_reg_screens.ProviderRegistrationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.common.InvitePeopleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.common.ContactSupportActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.parent.ChildProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.common.SummaryReportActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.parent.MedicalReportActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.parent.AddRelationship"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.parent.CenterInformationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.parent.ChildProfileListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.parent.ParentSignUpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.parent.AddChildActivity"
+            android:screenOrientation="portrait">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+
+        </activity>
+        <activity
+            android:name=".activities.providers.ProviderDailyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.providers.StaffActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.providers.reports.AddReportActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.providers.reports.IncidentReportActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.providers.reports.ProviderAttendanceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.providers.reports.DailyReportActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.providers.SettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.providers.MyProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.providers.messages.ChatActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.providers.messages.MakeNewGroupActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.providers.messages.NewGroupChatActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activities.providers.messages.NewMessageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.providers.ChildProfileDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.providers.class_room_ui.ClassRoomChildDetail"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.providers.class_room_ui.SelectChildrenActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.providers.class_room_ui.CreateClassRoom"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.providers.class_room_ui.ClassListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.providers.ProviderMainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activities.common.ResetPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.common.VerifyOtpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.common.ForgetPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.providers.SignupActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.providers.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.common.SplashActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.parent.ParentDailyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".payment_screens.BrowserActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.providers.AddActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".helper.VideoDisplayActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".utils.slider.MediaSliderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.parent.GetCallYouWithChildForAuthorizedAdults"
+            android:screenOrientation="portrait">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name=".activities.parent.ParentAttendanceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.providers.ProviderChildHelperActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

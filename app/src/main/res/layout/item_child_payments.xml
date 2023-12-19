@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        app:cardCornerRadius="15dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.43" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/topLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tvHead"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/_15sdp"
+                    android:text="@string/str_child_monthly_fee"
+                    android:textColor="@color/grey_900"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintEnd_toStartOf="@id/ivDropDown"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ivDropDown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="?selectableItemBackground"
+                    android:clickable="true"
+                    android:paddingHorizontal="@dimen/_15sdp"
+                    android:src="@drawable/ic_drop_down"
+                    app:layout_constraintEnd_toStartOf="@id/ivEdit"
+                    app:tint="@color/colorBlack" />
+
+                <ImageView
+                    android:id="@+id/ivEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="?selectableItemBackground"
+                    android:clickable="true"
+                    android:paddingHorizontal="@dimen/_15sdp"
+                    android:src="@drawable/ic_edit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvHead"
+                    app:tint="@color/colorBlack" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/viewHead"
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:alpha="0.2"
+                android:background="@color/grey_500"
+                app:layout_constraintTop_toBottomOf="@+id/topLayout1" />
+
+            <TextView
+                android:id="@+id/tvDueOn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/font_medium"
+                android:text="@string/str_due_on"
+                android:textColor="@color/colorYellow"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/viewHead"
+                app:layout_constraintTop_toBottomOf="@id/viewHead" />
+
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:alpha="0.7"
+                android:fontFamily="@font/font_regular"
+                android:text="@string/str_dummy_data"
+                android:textAllCaps="true"
+                android:textColor="@color/colorBlack"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/viewHead"
+                app:layout_constraintTop_toBottomOf="@id/tvDueOn" />
+
+
+            <TextView
+                android:id="@+id/txtViewDue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:fontFamily="@font/font_semi_bold"
+                android:text="@string/str_due"
+                android:textColor="@color/colorBlack"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@id/guide1"
+                app:layout_constraintTop_toTopOf="@id/tvDueOn" />
+
+
+            <TextView
+                android:id="@+id/tvDuePrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/font_medium"
+                android:text="@string/str_dummy_price"
+                android:textColor="@color/colorYellow"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/txtViewDue"
+                app:layout_constraintTop_toTopOf="@id/tvDate" />
+
+
+            <TextView
+                android:id="@+id/tvPayment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/font_semi_bold"
+                android:text="@string/str_payment"
+                android:textColor="@color/colorBlack"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/tvDueOn"
+                app:layout_constraintTop_toBottomOf="@id/tvDate" />
+
+            <TextView
+                android:id="@+id/tvPaymentPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:fontFamily="@font/font_regular"
+                android:text="--"
+                android:textColor="@color/colorBlack"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/tvPayment"
+                app:layout_constraintTop_toBottomOf="@id/tvPayment" />
+
+            <TextView
+                android:id="@+id/tvBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/font_semi_bold"
+                android:text="@string/str_balance"
+                android:textColor="@color/colorBlack"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/txtViewDue"
+                app:layout_constraintTop_toBottomOf="@id/tvDate" />
+
+            <TextView
+                android:id="@+id/tvBalancePrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:fontFamily="@font/font_regular"
+                android:text="--"
+                android:textColor="@color/colorBlack"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/txtViewDue"
+                app:layout_constraintTop_toBottomOf="@id/tvBalance" />
+
+            <View
+                android:id="@+id/viewMiddle"
+                android:layout_width="0dp"
+                android:layout_height="0.8dp"
+                android:layout_marginTop="25dp"
+                android:alpha="0.2"
+                android:background="@color/grey_500"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@id/viewHead"
+                app:layout_constraintTop_toBottomOf="@id/tvBalancePrice" />
+
+
+            <net.cachapa.expandablelayout.ExpandableLayout
+                android:id="@+id/expandLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:el_duration="1000"
+                app:el_expanded="true"
+                app:el_parallax="0.5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewMiddle">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guide2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.43" />
+
+                    <TextView
+                        android:id="@+id/tvClayTonHead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/font_medium"
+                        android:text="@string/str_claytone"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvClayTone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:alpha="0.7"
+                        android:fontFamily="@font/font_regular"
+                        android:text="@string/str_claytone_dummy_value"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="@id/tvClayTonHead"
+                        app:layout_constraintTop_toBottomOf="@id/tvClayTonHead" />
+
+                    <TextView
+                        android:id="@+id/tvTypeHead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/font_semi_bold"
+                        android:text="@string/str_type"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toEndOf="@id/guide2"
+                        app:layout_constraintTop_toTopOf="@id/tvClayTonHead" />
+
+
+                    <TextView
+                        android:id="@+id/tvType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/font_medium"
+                        android:text="--"
+                        android:textColor="@color/green_800"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="@id/tvTypeHead"
+                        app:layout_constraintTop_toTopOf="@id/tvClayTone" />
+
+                    <TextView
+                        android:id="@+id/tvPayerHead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/font_semi_bold"
+                        android:text="@string/str_Payer"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="@id/tvClayTonHead"
+                        app:layout_constraintTop_toBottomOf="@id/tvClayTone" />
+
+                    <TextView
+                        android:id="@+id/tvPayer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/font_regular"
+                        android:text="@string/str_claytone"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="@id/tvClayTonHead"
+                        app:layout_constraintTop_toBottomOf="@id/tvPayerHead" />
+
+                    <TextView
+                        android:id="@+id/tvStatusHead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/font_semi_bold"
+                        android:text="@string/str_balance"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="@id/tvTypeHead"
+                        app:layout_constraintTop_toTopOf="@id/tvPayerHead" />
+
+                    <TextView
+                        android:id="@+id/tvStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/font_regular"
+                        android:text="--"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="@id/tvStatusHead"
+                        app:layout_constraintTop_toBottomOf="@id/tvStatusHead" />
+
+                    <TextView
+                        android:id="@+id/tvMemoHead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/font_semi_bold"
+                        android:text="@string/str_memo"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="@id/tvClayTonHead"
+                        app:layout_constraintTop_toBottomOf="@id/tvPayer" />
+
+
+                    <TextView
+                        android:id="@+id/tvMemo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/font_regular"
+                        android:text="@string/str_child_fee"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="@id/tvClayTonHead"
+                        app:layout_constraintTop_toBottomOf="@id/tvMemoHead" />
+
+
+                    <TextView
+                        android:id="@+id/tvSentHead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:fontFamily="@font/font_semi_bold"
+                        android:text="@string/str_sent_on"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="@id/tvTypeHead"
+                        app:layout_constraintTop_toTopOf="@id/tvMemoHead" />
+
+
+                    <TextView
+                        android:id="@+id/tvSentDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/font_regular"
+                        android:text="@string/str_dummy_data"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="@id/tvSentHead"
+                        app:layout_constraintTop_toBottomOf="@id/tvSentHead" />
+
+
+                    <TextView
+                        android:id="@+id/tvAmountHead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/font_semi_bold"
+                        android:text="@string/str_amount"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="@id/tvClayTonHead"
+                        app:layout_constraintTop_toBottomOf="@id/tvMemo" />
+
+                    <TextView
+                        android:id="@+id/tvAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/font_regular"
+                        android:text="@string/str_dummy_price"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="@id/tvClayTonHead"
+                        app:layout_constraintTop_toBottomOf="@id/tvAmountHead" />
+
+
+                    <TextView
+                        android:id="@+id/tvDepositedOn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/font_semi_bold"
+                        android:text="@string/str_deposite"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toEndOf="@id/guide2"
+                        app:layout_constraintTop_toBottomOf="@id/tvMemo" />
+
+
+                    <TextView
+                        android:id="@+id/tvDepositedAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/font_regular"
+                        android:text="@string/str_dummy_price"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="@id/tvDepositedOn"
+                        app:layout_constraintTop_toBottomOf="@id/tvDepositedOn" />
+
+                    <View
+                        android:id="@+id/viewEnd"
+                        android:layout_width="0dp"
+                        android:layout_height="0.8dp"
+                        android:layout_marginTop="25dp"
+                        android:alpha="0.2"
+                        android:background="@color/grey_500"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvDepositedAmount" />
+
+
+                    <TextView
+                        android:id="@+id/tvPaymentMethodHead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/font_semi_bold"
+                        android:text="@string/str_payment_method"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="@id/tvClayTonHead"
+                        app:layout_constraintTop_toBottomOf="@id/viewEnd" />
+
+
+                    <TextView
+                        android:id="@+id/tvPaymentMethod"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/font_regular"
+                        android:text="@string/str_payment_methods"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="@id/tvClayTonHead"
+                        app:layout_constraintTop_toBottomOf="@id/tvPaymentMethodHead" />
+
+
+                    <TextView
+                        android:id="@+id/tvToAccountHead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/font_semi_bold"
+                        android:text="@string/str_to_account"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="@id/tvClayTonHead"
+                        app:layout_constraintTop_toBottomOf="@id/tvPaymentMethod" />
+
+
+                    <TextView
+                        android:id="@+id/tvToAccount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/font_regular"
+                        android:text="@string/str_dummy_account"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="@id/tvToAccountHead"
+                        app:layout_constraintTop_toBottomOf="@id/tvToAccountHead" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvFiles"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_12sdp"
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.516"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvToAccount" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </net.cachapa.expandablelayout.ExpandableLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

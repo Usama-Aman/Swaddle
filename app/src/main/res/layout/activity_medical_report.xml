@@ -1,0 +1,944 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.parent.MedicalReportActivity">
+
+        <RelativeLayout
+            android:id="@+id/toolBar"
+            android:layout_width="0dp"
+            android:layout_height="?actionBarSize"
+            android:background="@color/colorWhite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/font_semi_bold"
+                android:text="Medical"
+                android:textColor="@color/colorLoginBlack"
+                android:textSize="@dimen/_16ssp" />
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/medMainScrollView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolBar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tvClass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/font_regular"
+                    android:text="Select Classroom"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvSpinnerClass"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvClass">
+
+                    <TextView
+                        android:id="@+id/tvSpinnerClassRoomNoData"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/font_semi_bold"
+                        android:gravity="center"
+                        android:text="No Classroom Found"
+                        android:textColor="@color/colorLightGrey"
+                        android:textSize="@dimen/_10ssp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/ivChild"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Spinner
+                        android:id="@+id/spClassRoom"
+                        style="@style/SpinnerTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+
+                        />
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/tvChild"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/font_regular"
+                    android:text="Select Child"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cvSpinnerClass" />
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvSpinnerCard"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvChild">
+
+                    <TextView
+                        android:id="@+id/tvSpinnerChildesNoData"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/font_semi_bold"
+                        android:gravity="center"
+                        android:text="No Child Found"
+                        android:textColor="@color/colorLightGrey"
+                        android:textSize="@dimen/_10ssp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/ivChild"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Spinner
+                        android:id="@+id/spChild"
+                        style="@style/SpinnerTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+
+                        />
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/tvClassRoom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:fontFamily="@font/font_regular"
+                    android:text="Classroom"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cvSpinnerCard" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@color/colorWhite"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="0dp"
+                    app:cardUseCompatPadding="false"
+                    app:layout_constraintEnd_toEndOf="@id/cvSpinnerCard"
+                    app:layout_constraintStart_toStartOf="@id/cvSpinnerCard"
+                    app:layout_constraintTop_toBottomOf="@id/tvClassRoom">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:id="@+id/llChildDetails"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/llChildInfo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:background="?selectableItemBackground"
+                                android:clickable="true">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    app:cardCornerRadius="@dimen/_10sdp">
+
+                                    <ImageView
+                                        android:id="@+id/ivChildImg"
+                                        android:layout_width="@dimen/_70sdp"
+                                        android:layout_height="@dimen/_70sdp"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/ic_user_placeholder_new" />
+
+                                </androidx.cardview.widget.CardView>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/tvChildName"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/_15sdp"
+                                        android:fontFamily="@font/font_semi_bold"
+                                        android:text="Maria Elliot"
+                                        android:textColor="@color/colorMedBlack"
+                                        android:textSize="@dimen/_14ssp" />
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/_15sdp"
+                                        android:layout_marginTop="@dimen/_3sdp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/font_semi_bold"
+                                            android:text="AGE: "
+                                            android:textColor="@color/colorBlack"
+                                            android:textSize="@dimen/_10ssp" />
+
+                                        <TextView
+                                            android:id="@+id/tvChildAge"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:background="@drawable/bg_et_search"
+                                            android:backgroundTint="@color/old_lace"
+                                            android:paddingHorizontal="@dimen/_10sdp"
+                                            android:paddingVertical="@dimen/_5sdp"
+                                            android:text="4y, 4m"
+                                            android:textColor="@color/colorYellow"
+                                            android:textSize="@dimen/_10ssp" />
+
+                                    </LinearLayout>
+
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:layout_marginBottom="@dimen/_10sdp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/_20sdp"
+                                    android:layout_height="@dimen/_20sdp"
+                                    android:src="@drawable/ic_dob" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/_15sdp"
+                                    android:alpha="0.6"
+                                    android:fontFamily="@font/font_regular"
+                                    android:text="Date of Birth"
+                                    android:textColor="@color/shuttle_gray"
+                                    android:textSize="@dimen/_10ssp" />
+
+                                <TextView
+
+                                    android:id="@+id/tvChildDob"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="@font/font_regular"
+                                    android:gravity="end"
+                                    android:text="13 Jul 2012"
+                                    android:textColor="@color/colorBlack"
+                                    tools:ignore="RtlHardcoded" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/seashell" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_10sdp"
+                                android:layout_marginVertical="@dimen/_10sdp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/_20sdp"
+                                    android:layout_height="@dimen/_20sdp"
+                                    android:src="@drawable/ic_pen" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/_15sdp"
+                                    android:alpha="0.6"
+                                    android:fontFamily="@font/font_regular"
+                                    android:text="Enrollment Date"
+                                    android:textColor="@color/shuttle_gray"
+                                    android:textSize="@dimen/_10ssp" />
+
+                                <TextView
+
+                                    android:id="@+id/tvChildEnrolmentDate"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="@font/font_regular"
+                                    android:gravity="end"
+                                    android:text="13 Jul 2012"
+                                    android:textColor="@color/colorBlack"
+                                    tools:ignore="RtlHardcoded" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/seashell" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_10sdp"
+                                android:layout_marginVertical="@dimen/_10sdp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/_20sdp"
+                                    android:layout_height="@dimen/_20sdp"
+                                    android:src="@drawable/ic_epi_pen" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/_15sdp"
+                                    android:alpha="0.6"
+                                    android:fontFamily="@font/font_regular"
+                                    android:text="Epi Pen?"
+                                    android:textColor="@color/shuttle_gray"
+                                    android:textSize="@dimen/_10ssp" />
+
+                                <TextView
+
+                                    android:id="@+id/tvChildEpiPen"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="@font/font_regular"
+                                    android:gravity="end"
+                                    android:text="Yes"
+                                    android:textColor="@color/colorBlack"
+                                    tools:ignore="RtlHardcoded" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/seashell" />
+
+
+                            <LinearLayout
+                                android:id="@+id/llEPIPenExpiration"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_10sdp"
+                                android:layout_marginVertical="@dimen/_10sdp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/_20sdp"
+                                    android:layout_height="@dimen/_20sdp"
+                                    android:src="@drawable/ic_dob" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/_15sdp"
+                                    android:alpha="0.6"
+                                    android:fontFamily="@font/font_regular"
+                                    android:maxLines="2"
+                                    android:text="Epi Pen expiration"
+                                    android:textColor="@color/shuttle_gray"
+                                    android:textSize="@dimen/_10ssp" />
+
+                                <TextView
+                                    android:id="@+id/tvChildEpiPenExpiryDate"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="@font/font_regular"
+                                    android:gravity="end"
+                                    android:text="13 Jul 2012"
+                                    android:textColor="@color/colorBlack"
+                                    tools:ignore="RtlHardcoded" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:id="@+id/viewEPIPen"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/seashell" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_10sdp"
+                                android:layout_marginVertical="@dimen/_10sdp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/_20sdp"
+                                    android:layout_height="@dimen/_20sdp"
+                                    android:src="@drawable/ic_abc" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/_15sdp"
+                                    android:alpha="0.6"
+                                    android:fontFamily="@font/font_regular"
+                                    android:maxLines="2"
+                                    android:text="Classroom"
+                                    android:textColor="@color/shuttle_gray"
+                                    android:textSize="@dimen/_10ssp" />
+
+                                <TextView
+                                    android:id="@+id/tvChildClassRoom"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="@font/font_regular"
+                                    android:gravity="end"
+                                    android:text="Pre -k"
+                                    android:textColor="@color/colorBlack"
+                                    tools:ignore="RtlHardcoded" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/seashell" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_10sdp"
+                                android:layout_marginVertical="@dimen/_10sdp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/_20sdp"
+                                    android:layout_height="@dimen/_20sdp"
+                                    android:src="@drawable/ic_allergies" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_15sdp"
+                                    android:layout_marginTop="@dimen/_4sdp"
+                                    android:alpha="0.6"
+                                    android:fontFamily="@font/font_regular"
+                                    android:text="Allergies"
+                                    android:textColor="@color/shuttle_gray"
+                                    android:textSize="@dimen/_10ssp" />
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rvTags"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:layout_marginTop="@dimen/_4sdp"
+                                    android:layout_marginBottom="@dimen/_4sdp"
+                                    android:visibility="gone"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toEndOf="@id/cvImg"
+                                    app:layout_constraintTop_toBottomOf="@id/tvAllHead"
+                                    tools:listitem="@layout/item_allergy" />
+
+                                <TextView
+                                    android:id="@+id/tvNoAllergies"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_30sdp"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:layout_marginTop="@dimen/_4sdp"
+                                    android:fontFamily="@font/font_semi_bold"
+                                    android:gravity="center"
+                                    android:text="No Allergies"
+                                    android:textColor="@color/colorLightGrey"
+                                    android:textSize="@dimen/_10ssp" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tvNoChildData"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/font_semi_bold"
+                            android:gravity="center"
+                            android:padding="@dimen/_50sdp"
+                            android:text="No Child Selected"
+                            android:textColor="@color/colorLightGrey"
+                            android:textSize="@dimen/_10ssp"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <HorizontalScrollView
+                    android:id="@+id/hsv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_8sdp"
+                    android:fillViewport="true"
+                    android:orientation="horizontal"
+                    android:scrollbars="none"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cardView">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <TextView
+                            android:id="@+id/tv2Month"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/font_regular"
+                            android:gravity="center"
+                            android:padding="@dimen/_8sdp"
+                            android:singleLine="true"
+                            android:text="2 Month"
+                            android:textColor="@color/color_grey_300"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <View
+                            android:id="@+id/view2Month"
+                            android:layout_width="0dp"
+                            android:layout_height="2dp"
+                            android:layout_marginHorizontal="@dimen/_4sdp"
+                            android:layout_weight="1"
+                            android:background="@color/colorSilver"
+                            app:layout_constraintEnd_toEndOf="@id/tv2Month"
+                            app:layout_constraintStart_toStartOf="@id/tv2Month"
+                            app:layout_constraintTop_toBottomOf="@id/tv2Month" />
+
+                        <TextView
+                            android:id="@+id/tv4Month"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+
+                            android:fontFamily="@font/font_regular"
+                            android:gravity="center"
+                            android:padding="@dimen/_8sdp"
+                            android:text="4 Month"
+                            android:textColor="@color/color_grey_300"
+                            android:textSize="@dimen/_12ssp"
+
+                            app:layout_constraintStart_toEndOf="@id/tv2Month"
+                            app:layout_constraintTop_toTopOf="@id/tv2Month" />
+
+                        <TextView
+                            android:id="@+id/tv6Month"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/font_regular"
+                            android:gravity="center"
+                            android:padding="@dimen/_8sdp"
+                            android:text="6 Month"
+                            android:textColor="@color/color_grey_300"
+                            android:textSize="@dimen/_12ssp"
+
+                            app:layout_constraintStart_toEndOf="@id/tv4Month"
+                            app:layout_constraintTop_toTopOf="@id/tv2Month" />
+
+                        <TextView
+                            android:id="@+id/tv9Month"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/font_regular"
+                            android:gravity="center"
+                            android:padding="@dimen/_8sdp"
+                            android:text="9 Month"
+                            android:textColor="@color/color_grey_300"
+                            android:textSize="@dimen/_12ssp"
+
+                            app:layout_constraintStart_toEndOf="@id/tv6Month"
+                            app:layout_constraintTop_toTopOf="@id/tv2Month" />
+
+                        <TextView
+                            android:id="@+id/tv12Month"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/font_regular"
+                            android:gravity="center"
+                            android:padding="@dimen/_8sdp"
+                            android:text="12 Month"
+                            android:textColor="@color/color_grey_300"
+                            android:textSize="@dimen/_12ssp"
+
+                            app:layout_constraintStart_toEndOf="@id/tv9Month"
+                            app:layout_constraintTop_toTopOf="@id/tv2Month" />
+
+
+                        <TextView
+                            android:id="@+id/tv15Month"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/font_regular"
+                            android:gravity="center"
+                            android:padding="@dimen/_8sdp"
+                            android:text="15 Month"
+                            android:textColor="@color/color_grey_300"
+                            android:textSize="@dimen/_12ssp"
+
+                            app:layout_constraintStart_toEndOf="@id/tv12Month"
+                            app:layout_constraintTop_toTopOf="@id/tv2Month" />
+
+                        <TextView
+                            android:id="@+id/tv18Month"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/font_regular"
+                            android:gravity="center"
+                            android:padding="@dimen/_8sdp"
+                            android:text="18 Month"
+                            android:textColor="@color/color_grey_300"
+                            android:textSize="@dimen/_12ssp"
+
+                            app:layout_constraintStart_toEndOf="@id/tv15Month"
+                            app:layout_constraintTop_toTopOf="@id/tv2Month" />
+
+                        <TextView
+                            android:id="@+id/tv2Years"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+
+                            android:fontFamily="@font/font_regular"
+                            android:gravity="center"
+                            android:padding="@dimen/_8sdp"
+                            android:text="2 Year"
+                            android:textColor="@color/color_grey_300"
+                            android:textSize="@dimen/_12ssp"
+
+                            app:layout_constraintStart_toEndOf="@id/tv18Month"
+                            app:layout_constraintTop_toTopOf="@id/tv2Month" />
+
+                        <TextView
+                            android:id="@+id/tv3Years"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+
+                            android:fontFamily="@font/font_regular"
+                            android:gravity="center"
+                            android:padding="@dimen/_8sdp"
+                            android:text="3 Year"
+                            android:textColor="@color/color_grey_300"
+                            android:textSize="@dimen/_12ssp"
+
+                            app:layout_constraintStart_toEndOf="@id/tv2Years"
+                            app:layout_constraintTop_toTopOf="@id/tv2Month" />
+
+                        <TextView
+                            android:id="@+id/tv4Years"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/font_regular"
+                            android:gravity="center"
+                            android:padding="@dimen/_8sdp"
+                            android:text="4 Year"
+                            android:textColor="@color/color_grey_300"
+                            android:textSize="@dimen/_12ssp"
+
+                            app:layout_constraintStart_toEndOf="@id/tv3Years"
+                            app:layout_constraintTop_toTopOf="@id/tv2Month" />
+
+                        <TextView
+                            android:id="@+id/tv5Years"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/font_regular"
+                            android:gravity="center"
+                            android:padding="@dimen/_8sdp"
+                            android:text="5 Year"
+                            android:textColor="@color/color_grey_300"
+                            android:textSize="@dimen/_12ssp"
+
+                            app:layout_constraintStart_toEndOf="@id/tv4Years"
+                            app:layout_constraintTop_toTopOf="@id/tv2Month" />
+
+
+                        <View
+                            android:id="@+id/view4Month"
+                            android:layout_width="0dp"
+                            android:layout_height="2dp"
+                            android:layout_marginHorizontal="@dimen/_4sdp"
+                            android:layout_weight="1"
+                            android:background="@color/colorSilver"
+                            app:layout_constraintEnd_toEndOf="@id/tv4Month"
+                            app:layout_constraintStart_toStartOf="@id/tv4Month"
+                            app:layout_constraintTop_toTopOf="@id/view2Month" />
+
+                        <View
+                            android:id="@+id/view6Month"
+                            android:layout_width="0dp"
+                            android:layout_height="2dp"
+                            android:layout_marginHorizontal="@dimen/_4sdp"
+                            android:layout_weight="1"
+                            android:background="@color/colorSilver"
+                            app:layout_constraintEnd_toEndOf="@id/tv6Month"
+                            app:layout_constraintStart_toStartOf="@id/tv6Month"
+                            app:layout_constraintTop_toTopOf="@id/view2Month" />
+
+                        <View
+                            android:id="@+id/view9Month"
+                            android:layout_width="0dp"
+                            android:layout_height="2dp"
+                            android:layout_marginHorizontal="@dimen/_4sdp"
+                            android:layout_weight="1"
+                            android:background="@color/colorSilver"
+                            app:layout_constraintEnd_toEndOf="@id/tv9Month"
+                            app:layout_constraintStart_toStartOf="@id/tv9Month"
+                            app:layout_constraintTop_toTopOf="@id/view2Month" />
+
+                        <View
+                            android:id="@+id/view12Month"
+                            android:layout_width="0dp"
+                            android:layout_height="2dp"
+                            android:layout_marginHorizontal="@dimen/_4sdp"
+                            android:layout_weight="1"
+                            android:background="@color/colorSilver"
+                            app:layout_constraintEnd_toEndOf="@id/tv12Month"
+                            app:layout_constraintStart_toStartOf="@id/tv12Month"
+                            app:layout_constraintTop_toTopOf="@id/view2Month" />
+
+                        <View
+                            android:id="@+id/view15Month"
+                            android:layout_width="0dp"
+                            android:layout_height="2dp"
+                            android:layout_marginHorizontal="@dimen/_4sdp"
+                            android:layout_weight="1"
+                            android:background="@color/colorSilver"
+                            app:layout_constraintEnd_toEndOf="@id/tv15Month"
+                            app:layout_constraintStart_toStartOf="@id/tv15Month"
+                            app:layout_constraintTop_toTopOf="@id/view2Month" />
+
+                        <View
+                            android:id="@+id/view18Month"
+                            android:layout_width="0dp"
+                            android:layout_height="2dp"
+                            android:layout_marginHorizontal="@dimen/_4sdp"
+                            android:layout_weight="1"
+                            android:background="@color/colorSilver"
+                            app:layout_constraintEnd_toEndOf="@id/tv18Month"
+                            app:layout_constraintStart_toStartOf="@id/tv18Month"
+                            app:layout_constraintTop_toTopOf="@id/view2Month" />
+
+                        <View
+                            android:id="@+id/view2Years"
+                            android:layout_width="0dp"
+                            android:layout_height="2dp"
+                            android:layout_marginHorizontal="@dimen/_4sdp"
+                            android:layout_weight="1"
+                            android:background="@color/colorSilver"
+                            app:layout_constraintEnd_toEndOf="@id/tv2Years"
+                            app:layout_constraintStart_toStartOf="@id/tv2Years"
+                            app:layout_constraintTop_toTopOf="@id/view2Month" />
+
+                        <View
+                            android:id="@+id/view3Years"
+                            android:layout_width="0dp"
+                            android:layout_height="2dp"
+                            android:layout_marginHorizontal="@dimen/_4sdp"
+                            android:layout_weight="1"
+                            android:background="@color/colorSilver"
+                            app:layout_constraintEnd_toEndOf="@id/tv3Years"
+                            app:layout_constraintStart_toStartOf="@id/tv3Years"
+                            app:layout_constraintTop_toTopOf="@id/view2Month" />
+
+                        <View
+                            android:id="@+id/view4Years"
+                            android:layout_width="0dp"
+                            android:layout_height="2dp"
+                            android:layout_marginHorizontal="@dimen/_4sdp"
+                            android:layout_weight="1"
+                            android:background="@color/colorSilver"
+                            app:layout_constraintEnd_toEndOf="@id/tv4Years"
+                            app:layout_constraintStart_toStartOf="@id/tv4Years"
+                            app:layout_constraintTop_toTopOf="@id/view2Month" />
+
+                        <View
+                            android:id="@+id/view5Years"
+                            android:layout_width="0dp"
+                            android:layout_height="2dp"
+                            android:layout_marginHorizontal="@dimen/_4sdp"
+                            android:layout_weight="1"
+                            android:background="@color/colorSilver"
+                            app:layout_constraintEnd_toEndOf="@id/tv5Years"
+                            app:layout_constraintStart_toStartOf="@id/tv5Years"
+                            app:layout_constraintTop_toTopOf="@id/view2Month" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </HorizontalScrollView>
+
+                <TextView
+                    android:id="@+id/tvUploadReport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:fontFamily="@font/font_regular"
+                    android:text="Upload Report"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/hsv" />
+
+                <TextView
+                    android:id="@+id/tvFileStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="Jan 2020 - pending"
+                    android:textColor="@color/color_grey_300"
+                    android:textSize="@dimen/_10ssp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@id/tvUploadReport"
+                    app:layout_constraintTop_toBottomOf="@id/tvUploadReport" />
+
+                <RelativeLayout
+                    android:id="@+id/btnUpload"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_34sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:background="@drawable/bg_btn_login"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/hsv">
+
+                    <TextView
+                        android:id="@+id/tvUpload"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:background="?selectableItemBackground"
+                        android:fontFamily="@font/font_regular"
+                        android:gravity="center"
+                        android:text="Upload"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <ProgressBar
+                        android:id="@+id/progressbar"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recDailyReport"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:nestedScrollingEnabled="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvFileStatus" />
+
+
+                <TextView
+                    android:id="@+id/tvNoReportsFound"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/font_semi_bold"
+                    android:gravity="center"
+                    android:padding="@dimen/_50sdp"
+                    android:text="No Entry"
+                    android:textColor="@color/colorLightGrey"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvFileStatus" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:fillViewport="true"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/topBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?selectableItemBackground"
+                    android:fontFamily="@font/font_semi_bold"
+                    android:paddingVertical="15dp"
+                    android:paddingStart="@dimen/_20sdp"
+                    android:text="Select Any"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ivCancel"
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:padding="@dimen/_4sdp"
+                    android:src="@drawable/ic_cross" />
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/viewFollow"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/topBar"
+                android:alpha="0.5"
+                android:background="@color/grey_600"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvParents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewFollow"
+                android:layout_margin="@dimen/_8sdp" />
+
+            <EditText
+                android:id="@+id/etOther"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_below="@+id/rvParents"
+                android:layout_margin="@dimen/_12sdp"
+                android:background="@drawable/bg_et_search"
+                android:fontFamily="@font/font_regular"
+                android:gravity="center_vertical"
+                android:hint="Type Anything..."
+                android:inputType="text"
+                android:paddingVertical="@dimen/_5sdp"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingEnd="@dimen/_8sdp"
+                android:textColor="@color/colorLoginBlack"
+                android:textSize="@dimen/_10ssp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvParents" />
+
+            <include
+                android:id="@+id/noData"
+                layout="@layout/no_data_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/topBar" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvChoose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etOther"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_30sdp"
+                app:cardBackgroundColor="@color/colorOrange"
+                app:cardCornerRadius="15dp">
+
+                <TextView
+                    android:id="@+id/tvChoose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?selectableItemBackground"
+                    android:fontFamily="@font/font_regular"
+                    android:gravity="center"
+                    android:paddingVertical="15dp"
+                    android:text="Choose"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/progressbar"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:visibility="gone" />
+
+
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

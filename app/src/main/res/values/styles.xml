@@ -1,0 +1,75 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorWhite</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="Widget.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
+        <item name="fontFamily">@font/font_regular</item>
+    </style>
+
+    <style name="BottomNavigationView.Active" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textColor">@color/colroBlue</item>
+    </style>
+
+    <style name="ShapeAppearance.ImageView" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12%</item>
+    </style>
+
+    <!--Drop Down Style-->
+    <style name="SpinnerTheme" parent="android:Widget.Spinner">
+        <item name="android:background">@drawable/spinner_background</item>
+
+    </style>
+
+    <style name="BottomSheetDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimaryDark">@android:color/transparent</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="BottomDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_up</item>
+        <item name="android:windowExitAnimation">@anim/slide_down</item>
+    </style>
+
+    <style name="ReportDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimaryDark">@android:color/transparent</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="MySpinnerDatePickerStyle" parent="android:Theme.Material.Dialog">
+        <item name="android:datePickerStyle">@style/MySpinnerDatePicker</item>
+    </style>
+
+    <style name="MySpinnerDatePicker" parent="android:Widget.Material.DatePicker">
+        <item name="android:datePickerMode">spinner</item>
+    </style>
+
+    <style name="MySpinnerTimePickerStyle" parent="android:Theme.Material.Dialog">
+        <item name="android:timePickerStyle">@style/MySpinnerTimePicker</item>
+    </style>
+    <style name="MySpinnerTimePicker" parent="android:Widget.Material.TimePicker">
+        <item name="android:timePickerMode">spinner</item>
+    </style>
+    <style name="MySpinnerTimePickerStyles" parent="android:Theme.Material.Dialog">
+        <item name="android:timePickerStyle">@style/MySpinnerTimePicker</item>
+    </style>
+
+</resources>

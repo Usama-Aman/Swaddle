@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_optimizationLevel="chains"
+        tools:context=".helper.VideoDisplayActivity">
+
+
+        <RelativeLayout
+            android:id="@+id/topBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@color/inactiveGradientColor"
+            android:elevation="5dp">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:background="?selectableItemBackground"
+                android:clickable="true"
+                android:padding="@dimen/_6sdp"
+                android:src="@drawable/ic_back"
+                android:tint="@color/colorWhite" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/font_medium"
+                android:text="Media"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_11sdp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#555555"
+            android:orientation="vertical">
+
+            <com.google.android.exoplayer2.ui.PlayerView
+                android:id="@+id/video_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                app:auto_show="true"
+                app:repeat_toggle_modes="all"
+                app:resize_mode="fit"
+                app:show_buffering="always"
+                app:use_controller="true" />
+
+            <com.github.chrisbanes.photoview.PhotoView
+                android:id="@+id/imageMedia"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+
+        </RelativeLayout>
+
+        <!--    <RelativeLayout-->
+        <!--        android:id="@+id/rlClose"-->
+        <!--        android:layout_width="@dimen/_50sdp"-->
+        <!--        android:layout_height="@dimen/_50sdp"-->
+        <!--        android:layout_alignParentEnd="true"-->
+        <!--        android:layout_marginTop="@dimen/_10sdp"-->
+        <!--        android:layout_marginEnd="@dimen/_10sdp">-->
+
+        <!--        <androidx.appcompat.widget.AppCompatImageView-->
+        <!--            android:layout_width="@dimen/_50sdp"-->
+        <!--            android:layout_height="@dimen/_50sdp"-->
+        <!--            android:fitsSystemWindows="true"-->
+        <!--            android:padding="@dimen/_8sdp"-->
+        <!--            android:src="@drawable/ic_circle" />-->
+
+        <!--        <androidx.appcompat.widget.AppCompatImageView-->
+        <!--            android:layout_width="@dimen/_50sdp"-->
+        <!--            android:layout_height="@dimen/_50sdp"-->
+        <!--            android:fitsSystemWindows="true"-->
+        <!--            android:padding="@dimen/_12sdp"-->
+        <!--            android:src="@drawable/ic_close_red"-->
+        <!--            android:tint="@color/colorWhite" />-->
+        <!--    </RelativeLayout>-->
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_40sdp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/rlRetake"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:background="?selectableItemBackground"
+                android:clickable="true">
+
+                <ImageView
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:src="@drawable/ic_circle"
+                    android:tint="@color/colorAccent" />
+
+                <ImageView
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_retake"
+                    android:tint="@color/colorWhite" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlSend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:clickable="true">
+
+                <ImageView
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_circle"
+                    android:tint="@color/colorAccent" />
+
+                <ImageView
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="@dimen/_14sdp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_send_sms"
+                    android:tint="@color/colorWhite" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

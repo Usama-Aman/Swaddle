@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_5sdp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                app:cardCornerRadius="@dimen/_10sdp">
+
+                <ImageView
+                    android:id="@+id/ivImg"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_85sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_user_placeholder" />
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/font_semi_bold"
+                    android:text="Maria Elliot"
+                    android:textColor="@color/colorMedBlack"
+                    android:textSize="@dimen/_14ssp" />
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/font_regular"
+                        android:text="DOB: "
+                        android:textColor="@color/colorBlack" />
+
+
+                    <TextView
+                        android:id="@+id/tvCustody"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:background="@drawable/bg_tv_time"
+                        android:backgroundTint="@color/old_lace"
+                        android:paddingHorizontal="@dimen/_5sdp"
+                        android:text="22 Aug 2008"
+                        android:textColor="@color/colorYellow"
+                        android:textSize="@dimen/_12ssp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/dateLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/font_regular"
+                        android:text="Create Date: "
+                        android:textColor="@color/colorBlack" />
+
+
+                    <TextView
+                        android:id="@+id/tvCreatedDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:background="@drawable/bg_tv_time"
+                        android:backgroundTint="@color/old_lace"
+                        android:paddingHorizontal="@dimen/_5sdp"
+                        android:text="22 Aug 2008"
+                        android:textColor="@color/colorYellow"
+                        android:textSize="@dimen/_12ssp" />
+                </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp">
+
+                    <TextView
+                        android:id="@+id/btnAddIncident"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@drawable/bg_tv_time"
+                        android:drawableLeft="@drawable/ic_add_small"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/font_regular"
+                        android:gravity="center"
+                        android:paddingHorizontal="@dimen/_10sdp"
+                        android:paddingVertical="@dimen/_10sdp"
+                        android:text="Add Incident Report"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/_10ssp"
+                        android:visibility="gone">
+
+                    </TextView>
+
+                    <LinearLayout
+                        android:id="@+id/lnrDraft"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:weightSum="2">
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_tv_time"
+                            android:padding="@dimen/_8sdp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:src="@drawable/ic_draft" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:fontFamily="@font/font_regular"
+                                android:gravity="center"
+                                android:text="Saved Draft"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_8ssp" />
+
+                        </LinearLayout>
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/font_regular"
+                            android:gravity="center"
+                            android:text="Available for 24 hours"
+                            android:textColor="@color/colorLightRed"
+                            android:textSize="@dimen/_10ssp"
+
+                            />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvSubmitted"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/llButtons"
+                        android:layout_alignBottom="@+id/llButtons"
+                        android:layout_alignParentLeft="true"
+                        android:layout_toLeftOf="@id/llButtons"
+                        android:drawableLeft="@drawable/ic_tick"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:fontFamily="@font/font_regular"
+                        android:gravity="center_vertical"
+                        android:text="Report Submitted"
+                        android:textColor="@color/emerald"
+                        android:textSize="@dimen/_12ssp"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:id="@+id/llButtons"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/ivView"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginHorizontal="@dimen/_4sdp"
+                            android:layout_toStartOf="@+id/ivEdit"
+                            android:background="?selectableItemBackgroundBorderless"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:src="@drawable/ic_eye_with_bg"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/ivEdit"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:background="?selectableItemBackgroundBorderless"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:src="@drawable/ic_edit_with_bg"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</layout>

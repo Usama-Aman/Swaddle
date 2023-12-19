@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "484412028363",
+    "project_id": "swaddle-3a838",
+    "storage_bucket": "swaddle-3a838.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:484412028363:android:cff993a6dc1b2d8f84b24e",
+        "android_client_info": {
+          "package_name": "com.cp.swaddle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "484412028363-gt04c7mo3k2fvlkp0vrftk6hhkma89mj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgReOIQuEwByF9xKLpb-YjqZlOi2lHCVc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "484412028363-gt04c7mo3k2fvlkp0vrftk6hhkma89mj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

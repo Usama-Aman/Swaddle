@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".payment_screens.AddPaymentMethodsActivity">
+
+        <TextView
+            android:id="@+id/tvHead"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:fontFamily="@font/font_regular"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:text="@string/str_add_payment_methodes"
+            android:textColor="@color/colorLoginBlack"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_back"
+            app:tint="@color/colorBlack"
+            tools:ignore="ContentDescription,HardcodedText" />
+
+
+        <View
+            android:id="@+id/viewMiddle"
+            android:layout_width="0dp"
+            android:layout_height="0.8dp"
+            android:alpha="0.2"
+            android:background="@color/grey_500"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvHead" />
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvHead">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="15dp">
+
+
+                <TextView
+                    android:id="@+id/tvSelectMethod"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/font_regular"
+                    android:text="@string/str_select_method"
+                    android:textColor="@color/grey_900"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <LinearLayout
+                    android:id="@+id/lnrVisa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_card_normal"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="5dp"
+                    app:layout_constraintStart_toStartOf="@id/tvSelectMethod"
+                    app:layout_constraintTop_toBottomOf="@id/tvSelectMethod">
+
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        app:srcCompat="@drawable/ic_visa"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:fontFamily="@font/font_regular"
+
+
+                        android:text="@string/str_visa"
+                        android:textColor="@color/indigo_900"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/lnrMasterCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/bg_card_normal"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="5dp"
+                    app:layout_constraintStart_toEndOf="@id/lnrVisa"
+                    app:layout_constraintTop_toTopOf="@id/lnrVisa">
+
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/ic_master_card" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:fontFamily="@font/font_regular"
+                        android:text="@string/str_master_card"
+                        android:textColor="@color/indigo_900"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/tvCardDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/font_regular"
+                    android:text="@string/str_enter_card_detail"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lnrVisa" />
+
+                <EditText
+                    android:id="@+id/etCardName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:background="@drawable/selector_edit_text"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:fontFamily="@font/font_regular"
+                    android:hint="@string/str_dummy_name"
+                    android:inputType="text"
+                    android:maxEms="50"
+                    android:maxLines="1"
+                    android:textColor="@color/colorLoginBlack"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvCardDetail" />
+
+                <EditText
+                    android:id="@+id/etCardNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:background="@drawable/selector_edit_text"
+                    android:drawableLeft="@drawable/ic_card_grey"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:fontFamily="@font/font_regular"
+                    android:hint="@string/str_dummy_number"
+                    android:inputType="number"
+                    android:maxEms="50"
+                    android:maxLines="1"
+                    android:nextFocusRight="@id/etDayMonth"
+                    android:nextFocusDown="@id/etDayMonth"
+                    android:paddingEnd="15dp"
+                    android:textColor="@color/colorLoginBlack"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/etCardName" />
+
+                <ImageView
+                    android:id="@+id/cardCheck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/ic_check_green"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/etCardNumber"
+                    app:layout_constraintEnd_toEndOf="@id/etCardNumber"
+                    app:layout_constraintTop_toTopOf="@id/etCardNumber"
+                    tools:ignore="VectorDrawableCompat" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide50"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/consBelowCardNo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="@id/etCardNumber"
+                    app:layout_constraintStart_toStartOf="@id/etCardNumber"
+                    app:layout_constraintTop_toBottomOf="@id/etCardNumber">
+
+
+                    <EditText
+                        android:id="@+id/etDayMonth"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="5dp"
+                        android:background="@drawable/selector_edit_text"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:fontFamily="@font/font_regular"
+                        android:hint="@string/str_mm_yy"
+                        android:imeOptions="actionNext"
+                        android:inputType="date"
+                        android:maxEms="50"
+                        android:maxLines="1"
+                        android:nextFocusRight="@id/etCvc"
+                        android:textColor="@color/colorLoginBlack"
+                        android:textCursorDrawable="@drawable/color_cursor"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintEnd_toEndOf="@id/guide502"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guide502"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.5" />
+
+
+                    <EditText
+                        android:id="@+id/etCvc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:background="@drawable/selector_edit_text"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:fontFamily="@font/font_regular"
+                        android:hint="@string/str_cvc"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxEms="50"
+                        android:maxLength="3"
+                        android:maxLines="1"
+                        android:nextFocusDown="@id/etAddress"
+                        android:textColor="@color/colorLoginBlack"
+                        android:textCursorDrawable="@drawable/color_cursor"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/guide502"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <CheckBox
+                    android:id="@+id/cbDefault"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:button="@drawable/selector_check_box_blue"
+                    android:fontFamily="@font/font_regular"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:text="@string/str_default"
+                    android:textColor="@color/blue_grey_400"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintStart_toStartOf="@id/etCardNumber"
+                    app:layout_constraintTop_toBottomOf="@id/consBelowCardNo" />
+
+
+                <TextView
+                    android:id="@+id/tvAccountAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/font_semi_bold"
+                    android:text="@string/str_account_address"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@id/etCardNumber"
+                    app:layout_constraintTop_toBottomOf="@id/cbDefault" />
+
+
+                <TextView
+                    android:id="@+id/tvAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/font_regular"
+                    android:text="@string/str_address"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvAccountAddress" />
+
+                <TextView
+                    android:id="@+id/etAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:background="@drawable/selector_edit_text"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:fontFamily="@font/font_regular"
+
+                    android:hint="@string/str_dummy_address"
+                    android:imeOptions="actionNext"
+                    android:maxEms="50"
+                    android:maxLines="1"
+                    android:nextFocusDown="@id/etCountry"
+                    android:textColor="@color/colorLoginBlack"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvAddress" />
+
+                <TextView
+                    android:id="@+id/tvCountry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/font_regular"
+                    android:text="@string/str_country"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/etAddress" />
+
+                <EditText
+                    android:id="@+id/etCountry"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/selector_edit_text"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:fontFamily="@font/font_regular"
+                    android:hint="@string/str_dummy_coutry"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:maxEms="50"
+                    android:maxLines="1"
+                    android:nextFocusRight="@id/etState"
+                    android:textColor="@color/colorLoginBlack"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="@id/guide50"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvCountry" />
+
+                <TextView
+                    android:id="@+id/tvState"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/font_regular"
+                    android:text="@string/str_state"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintStart_toStartOf="@id/guide50"
+                    app:layout_constraintTop_toTopOf="@id/tvCountry" />
+
+                <EditText
+                    android:id="@+id/etState"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:background="@drawable/selector_edit_text"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:fontFamily="@font/font_regular"
+                    android:hint="@string/str_dummy_state"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:maxEms="50"
+                    android:maxLines="1"
+                    android:textColor="@color/colorLoginBlack"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tvState"
+                    app:layout_constraintTop_toBottomOf="@id/tvState" />
+
+
+                <TextView
+                    android:id="@+id/tvCity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/font_regular"
+                    android:text="@string/str_city"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/etState" />
+
+                <EditText
+                    android:id="@+id/etCity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/selector_edit_text"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:fontFamily="@font/font_regular"
+                    android:hint="@string/str_dummy_city"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:maxEms="50"
+                    android:maxLines="1"
+                    android:nextFocusRight="@id/etZipCode"
+                    android:textColor="@color/colorLoginBlack"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="@id/guide50"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvCity" />
+
+
+                <TextView
+                    android:id="@+id/tvZipCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/font_regular"
+                    android:text="@string/str_zip_code"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintStart_toStartOf="@id/guide50"
+                    app:layout_constraintTop_toTopOf="@id/tvCity" />
+
+                <EditText
+                    android:id="@+id/etZipCode"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:background="@drawable/selector_edit_text"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:fontFamily="@font/font_regular"
+                    android:hint="@string/str_dummy_zip_code"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxEms="50"
+                    android:maxLines="1"
+                    android:textColor="@color/colorLoginBlack"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tvState"
+                    app:layout_constraintTop_toBottomOf="@id/tvZipCode" />
+
+
+                <RelativeLayout
+                    android:id="@+id/btnSave"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_38sdp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:background="@drawable/bg_btn_login"
+                    app:layout_constraintEnd_toEndOf="@id/etCardNumber"
+                    app:layout_constraintStart_toStartOf="@id/etCardNumber"
+                    app:layout_constraintTop_toBottomOf="@id/etCity">
+
+                    <TextView
+                        android:id="@+id/tvSave"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:background="?selectableItemBackground"
+                        android:fontFamily="@font/font_regular"
+                        android:gravity="center"
+                        android:text="@string/str_Save"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <ProgressBar
+                        android:id="@+id/progressbar"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

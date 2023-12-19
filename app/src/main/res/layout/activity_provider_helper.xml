@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.providers.class_room_ui.ClassListActivity">
+
+        <RelativeLayout
+            android:id="@+id/toolBar"
+            android:layout_width="0dp"
+            android:layout_height="?actionBarSize"
+            android:background="@color/colorWhite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/imgBack"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:background="?selectableItemBackground"
+                android:clickable="true"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_15sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:src="@drawable/ic_back" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toStartOf="@id/imgAdd"
+                android:layout_toEndOf="@id/imgBack"
+                android:fontFamily="@font/font_semi_bold"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:text="Attendance Report"
+                android:textColor="@color/colorLoginBlack"
+                android:textSize="@dimen/_14ssp" />
+
+
+            <LinearLayout
+                android:id="@+id/imgAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:background="?selectableItemBackground"
+                android:clickable="true"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:visibility="invisible">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_add" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvClass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="@font/font_regular"
+            android:text="Select Classroom"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolBar" />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvSpinnerClass"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:theme="@style/Theme.MaterialComponents.Light"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvClass">
+
+            <TextView
+                android:id="@+id/tvSpinnerClassRoomNoData"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:fontFamily="@font/font_semi_bold"
+                android:gravity="center"
+                android:text="No Classroom Found"
+                android:textColor="@color/colorLightGrey"
+                android:textSize="@dimen/_10ssp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivChild"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Spinner
+                android:id="@+id/spClassRoom"
+                style="@style/SpinnerTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <TextView
+            android:id="@+id/tvdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="@font/font_semi_bold"
+            android:text="Select by Date"
+            android:textColor="@color/colorDashBoardBlack"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cvSpinnerClass" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvSelectDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:background="@color/white"
+            android:elevation="@dimen/_3sdp"
+            android:visibility="gone"
+            app:cardCornerRadius="@dimen/_15sdp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvdate">
+
+            <TextView
+                android:id="@+id/tvSelectDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:layout_marginVertical="@dimen/_3sdp"
+                android:drawableStart="@drawable/ic_calendar_dates"
+                android:drawablePadding="@dimen/_5sdp"
+                android:fontFamily="@font/font_semi_bold"
+                android:text="July 22,2021"
+                android:textColor="@color/colorDashBoardTextColor"
+                android:textSize="@dimen/_10ssp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cvSelectDate" />
+
+        <TextView
+            android:id="@+id/tvSortBy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="5dp"
+            android:fontFamily="@font/font_semi_bold"
+            android:text="Checked In Status"
+            android:textColor="@color/colorDashBoardBlack"
+            android:textSize="@dimen/_14ssp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/buttonGroup"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/buttonGroup"
+            app:layout_constraintTop_toTopOf="@id/buttonGroup" />
+
+
+        <com.addisonelliott.segmentedbutton.SegmentedButtonGroup
+            android:id="@+id/buttonGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="18dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/white"
+            android:elevation="2dp"
+            app:borderColor="@color/grey_50"
+            app:borderWidth=".5dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recDate"
+            app:position="0"
+            app:radius="29.5dp"
+            app:ripple="false"
+            app:selectedBackground="@color/colorOrange"
+            app:selectedButtonRadius="30dp">
+
+            <com.addisonelliott.segmentedbutton.SegmentedButton
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:checked="false"
+                android:padding="5dp"
+                app:drawableGravity="left"
+                app:drawableTint="@color/black"
+                app:selectedBackground="@color/colorOrange"
+                app:selectedDrawableTint="@color/white"
+                app:selectedTextColor="@color/white"
+                app:text="All"
+                app:textColor="@color/black"
+                app:textSize="16sp" />
+
+            <com.addisonelliott.segmentedbutton.SegmentedButton
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:checked="false"
+                android:padding="5dp"
+                app:drawableGravity="left"
+                app:drawableTint="@color/black"
+                app:selectedBackground="@color/colorOrange"
+                app:selectedDrawableTint="@color/white"
+                app:selectedTextColor="@color/white"
+                app:text="Signed In"
+                app:textColor="@color/black"
+                app:textSize="16sp" />
+
+            <com.addisonelliott.segmentedbutton.SegmentedButton
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:checked="false"
+                android:padding="5dp"
+                app:drawableGravity="left"
+                app:drawableTint="@color/black"
+                app:selectedBackground="@color/colorOrange"
+                app:selectedDrawableTint="@color/white"
+                app:selectedTextColor="@color/white"
+                app:text="Signed Out"
+                app:textColor="@color/black"
+                app:textSize="16sp" />
+
+            <com.addisonelliott.segmentedbutton.SegmentedButton
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:padding="5dp"
+                app:drawableGravity="left"
+                app:drawableTint="@color/black"
+                app:selectedBackground="@color/colorOrange"
+                app:selectedDrawableTint="@color/white"
+                app:selectedTextColor="@color/white"
+                app:text="Absent"
+                app:textColor="@color/black"
+                app:textSize="16sp" />
+
+        </com.addisonelliott.segmentedbutton.SegmentedButtonGroup>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recViewClassList"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/btnSubmit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/buttonGroup"
+            app:layout_constraintVertical_bias="0.0"
+            tools:listitem="@layout/item_provider_helper_class" />
+
+
+        <RelativeLayout
+            android:id="@+id/noData"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/btnSubmit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/buttonGroup">
+
+            <RelativeLayout
+                android:id="@+id/rlNoRecord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <ImageView
+                        android:id="@+id/ivErrorImage"
+                        android:layout_width="@dimen/_150sdp"
+                        android:layout_height="@dimen/_150sdp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/ic_nothing_found" />
+
+                    <TextView
+                        android:id="@+id/tvErrorMessage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="14dp"
+                        android:fontFamily="@font/font_semi_bold"
+                        android:text="No data found"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <Button
+                        android:id="@+id/retryBtn"
+                        android:layout_width="84dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:background="@drawable/bg_corner"
+                        android:fontFamily="@font/font_medium"
+                        android:gravity="center"
+                        android:text="Retry"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_36sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:background="@drawable/bg_btn_login"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/tvSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/font_regular"
+                android:gravity="center"
+                android:text="Go to Attendance Details"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_12ssp" />
+
+            <ProgressBar
+                android:id="@+id/progressbar"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

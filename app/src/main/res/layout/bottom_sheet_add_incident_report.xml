@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:paddingBottom="15dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite">
+
+            <TextView
+                android:id="@+id/tvHead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/font_bold"
+                android:text="@string/str_add_incident"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/ivCross"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:paddingStart="10dp"
+                android:src="@drawable/ic_cross"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvHead"
+                app:tint="@color/red"
+                tools:ignore="VectorDrawableCompat" />
+
+
+            <View
+                android:id="@+id/viewHead"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:alpha="0.3"
+                android:background="@color/grey_600"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvHead" />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvImg"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewHead">
+
+                <ImageView
+                    android:id="@+id/ivChild"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_user_placeholder_new" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/font_semi_bold"
+                android:text="Maria Elliot"
+                android:textColor="@color/colorMedBlack"
+                android:textSize="@dimen/_14ssp"
+
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cvImg" />
+
+
+            <LinearLayout
+                android:id="@+id/lnrDob"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvName">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/font_regular"
+                    android:text="DOB: "
+                    android:textColor="@color/colorBlack" />
+
+
+                <TextView
+                    android:id="@+id/tvChildAge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:background="@drawable/bg_tv_time"
+                    android:backgroundTint="@color/old_lace"
+                    android:paddingHorizontal="@dimen/_5sdp"
+                    android:text="22 Aug 2008"
+                    android:textColor="@color/colorYellow"
+                    android:textSize="@dimen/_12ssp" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tvUploadHead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:fontFamily="@font/font_semi_bold"
+                android:text="@string/tvupload_pic"
+                android:textColor="@color/colorBlack"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/tvHead"
+                app:layout_constraintTop_toBottomOf="@id/lnrDob" />
+
+            <View
+                android:id="@+id/viewUpload"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/bg_dash_upload"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="@id/ivCross"
+                app:layout_constraintStart_toStartOf="@id/tvHead"
+                app:layout_constraintTop_toBottomOf="@id/tvUploadHead" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recImages"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="@id/ivCross"
+                app:layout_constraintStart_toStartOf="@id/tvHead"
+                app:layout_constraintTop_toBottomOf="@id/viewUpload"
+                tools:itemCount="10"
+                tools:listitem="@layout/item_images_picked" />
+
+
+            <ImageView
+                android:id="@+id/ivUpload"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_upload"
+                app:layout_constraintBottom_toBottomOf="@id/viewUpload"
+                app:layout_constraintEnd_toEndOf="@id/viewUpload"
+                app:layout_constraintStart_toStartOf="@id/viewUpload"
+                app:layout_constraintTop_toTopOf="@id/viewUpload"
+                app:tint="@color/grey_600" />
+
+
+            <TextView
+                android:id="@+id/tvUpload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/str_upload"
+                android:textColor="@color/grey_700"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@id/viewUpload"
+                app:layout_constraintStart_toStartOf="@id/viewUpload"
+                app:layout_constraintTop_toBottomOf="@id/ivUpload" />
+
+
+            <TextView
+                android:id="@+id/tvUploadedDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/str_upload_date"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintStart_toStartOf="@id/tvHead"
+                app:layout_constraintTop_toBottomOf="@id/recImages" />
+
+
+            <TextView
+                android:id="@+id/tvWhatHappened"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/font_semi_bold"
+                android:text="@string/str_what_happened"
+                android:textColor="@color/colorBlack"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/tvUploadHead"
+                app:layout_constraintTop_toBottomOf="@id/tvUploadedDate" />
+
+
+            <EditText
+                android:id="@+id/etDescription"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_et_search"
+                android:fontFamily="@font/font_regular"
+                android:gravity="top"
+                android:hint="@string/str_dummy_reason"
+                android:inputType="textMultiLine"
+                android:padding="@dimen/_5sdp"
+                android:paddingStart="15dp"
+                android:textColor="@color/colorLoginBlack"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintEnd_toEndOf="@id/ivCross"
+                app:layout_constraintStart_toStartOf="@id/tvHead"
+                app:layout_constraintTop_toBottomOf="@id/tvWhatHappened"
+
+                />
+            <TextView
+                android:id="@+id/tvTreatment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/font_semi_bold"
+                android:text="Treatment Given *"
+                android:textColor="@color/colorBlack"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/etComments"
+                app:layout_constraintTop_toBottomOf="@id/etDescription" />
+            <EditText
+                android:id="@+id/etTreatment"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_et_search"
+                android:fontFamily="@font/font_regular"
+                android:gravity="top"
+                android:hint="Please describe treatment given!"
+                android:inputType="textMultiLine"
+                android:padding="@dimen/_5sdp"
+                android:paddingStart="15dp"
+                android:textColor="@color/colorLoginBlack"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintEnd_toEndOf="@id/ivCross"
+                app:layout_constraintStart_toStartOf="@id/tvHead"
+                app:layout_constraintTop_toBottomOf="@id/tvTreatment" />
+
+
+            <TextView
+                android:id="@+id/tvComments"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/font_semi_bold"
+                android:text="@string/str_teacher_comments"
+                android:textColor="@color/colorBlack"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/tvUploadHead"
+                app:layout_constraintTop_toBottomOf="@id/etTreatment" />
+            <EditText
+                android:id="@+id/etComments"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_et_search"
+                android:fontFamily="@font/font_regular"
+                android:gravity="top"
+                android:hint="@string/str_teacher_comments_description"
+                android:inputType="textMultiLine"
+                android:padding="@dimen/_5sdp"
+                android:paddingStart="15dp"
+                android:textColor="@color/colorLoginBlack"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintEnd_toEndOf="@id/ivCross"
+                app:layout_constraintStart_toStartOf="@id/tvHead"
+                app:layout_constraintTop_toBottomOf="@id/tvComments" />
+
+
+            <LinearLayout
+                android:id="@+id/lnrMessage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etComments">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:src="@drawable/ic_day_care_msg" />
+
+                <TextView
+                    android:id="@+id/tvAlertMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:fontFamily="@font/font_regular"
+                    android:text="Click Submit to send immediate notifications"
+                    android:textColor="@color/blue_grey_600"
+                    android:textSize="@dimen/_12ssp" />
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/btnSubmit"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_38sdp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/bg_btn_login"
+                app:layout_constraintEnd_toEndOf="@id/ivCross"
+                app:layout_constraintStart_toStartOf="@id/tvHead"
+                app:layout_constraintTop_toBottomOf="@id/lnrMessage">
+
+                <TextView
+                    android:id="@+id/tvSignin"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:background="?selectableItemBackground"
+                    android:fontFamily="@font/font_regular"
+                    android:gravity="center"
+                    android:text="@string/str_submit"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_12ssp" />
+
+                <ProgressBar
+                    android:id="@+id/progressbar"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

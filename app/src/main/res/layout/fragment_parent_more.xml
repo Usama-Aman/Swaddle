@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:fontFamily="@font/font_regular"
+                android:text="Menu"
+                android:textColor="@color/colorLoginBlack"
+                android:textSize="@dimen/_28ssp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:background="@color/colorMenuViewBg"
+                android:visibility="invisible" />
+
+            <LinearLayout
+                android:id="@+id/lnrChildren"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:background="?selectableItemBackground"
+                android:gravity="center_vertical"
+                android:paddingVertical="@dimen/_15sdp"
+                android:weightSum="10">
+
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="23dp"
+                    android:layout_weight="1.5"
+                    android:src="@drawable/ic_child_profiles" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="8"
+                    android:fontFamily="@font/font_regular"
+                    android:text="Children"
+
+                    android:textColor="@color/colorMenuText"
+                    android:textSize="@dimen/_12ssp" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorMenuViewBg" />
+
+
+            <LinearLayout
+                android:id="@+id/lnrAttendance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:gravity="center_vertical"
+                android:paddingVertical="@dimen/_15sdp"
+                android:weightSum="10">
+
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="23dp"
+                    android:layout_weight="1.5"
+                    android:src="@drawable/ic_attandance" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="8"
+                    android:fontFamily="@font/font_regular"
+                    android:text="Attendance"
+
+                    android:textColor="@color/colorMenuText"
+                    android:textSize="@dimen/_12ssp" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorMenuViewBg" />
+
+
+            <LinearLayout
+                android:id="@+id/lnrActivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:gravity="center_vertical"
+                android:paddingVertical="@dimen/_15sdp"
+                android:weightSum="10">
+
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:src="@drawable/ic_activity_small" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="8"
+                    android:fontFamily="@font/font_regular"
+                    android:text="Activity"
+
+                    android:textColor="@color/colorMenuText"
+                    android:textSize="@dimen/_12ssp" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorMenuViewBg" />
+
+
+            <LinearLayout
+                android:id="@+id/lnrCommunication"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:gravity="center_vertical"
+                android:paddingVertical="@dimen/_15sdp"
+                android:weightSum="10">
+
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:src="@drawable/ic_communication" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="8"
+                    android:fontFamily="@font/font_regular"
+                    android:text="Communication"
+
+                    android:textColor="@color/colorMenuText"
+                    android:textSize="@dimen/_12ssp" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorMenuViewBg" />
+
+            <LinearLayout
+                android:id="@+id/llDailyReport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:paddingVertical="@dimen/_15sdp"
+                android:visibility="visible"
+                android:weightSum="10">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:src="@drawable/ic_report_small" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8"
+                    android:fontFamily="@font/font_regular"
+                    android:text="Daily Report"
+                    android:textColor="@color/colorMenuText"
+                    android:textSize="@dimen/_12ssp" />
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorMenuViewBg" />
+
+
+            <LinearLayout
+                android:id="@+id/lnrRelation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:gravity="center_vertical"
+                android:paddingVertical="@dimen/_15sdp"
+                android:weightSum="10">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="1.5"
+                    android:src="@drawable/ic_relationship" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8"
+                    android:fontFamily="@font/font_regular"
+                    android:text="Relationships"
+                    android:textColor="@color/colorMenuText"
+                    android:textSize="@dimen/_12ssp" />
+
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorMenuViewBg" />
+
+            <LinearLayout
+                android:id="@+id/lnrMedical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:paddingVertical="@dimen/_15sdp"
+                android:weightSum="10">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="23dp"
+                    android:layout_weight="1.5"
+                    android:src="@drawable/ic_medical" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8"
+                    android:fontFamily="@font/font_regular"
+                    android:text="Medical"
+                    android:textColor="@color/colorMenuText"
+                    android:textSize="@dimen/_12ssp" />
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorMenuViewBg" />
+
+            <LinearLayout
+                android:id="@+id/lnrIncidentReport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:paddingVertical="@dimen/_15sdp"
+                android:weightSum="10">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:src="@drawable/ic_report_small" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8"
+                    android:fontFamily="@font/font_regular"
+                    android:text="Incident Reports"
+                    android:textColor="@color/colorMenuText"
+                    android:textSize="@dimen/_12ssp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorMenuViewBg" />
+
+            <LinearLayout
+                android:id="@+id/lnrPayment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:gravity="center_vertical"
+                android:paddingVertical="@dimen/_15sdp"
+                android:weightSum="10">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="1.5"
+                    android:src="@drawable/ic_payment" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="8"
+                    android:fontFamily="@font/font_regular"
+                    android:text="Payment"
+                    android:textColor="@color/colorMenuText"
+                    android:textSize="@dimen/_12ssp" />
+
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorMenuViewBg" />
+
+            <LinearLayout
+                android:id="@+id/lnrSummaryReport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:gravity="center_vertical"
+                android:paddingVertical="@dimen/_15sdp"
+                android:weightSum="10">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="1.5"
+                    android:src="@drawable/ic_summary_report" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="8"
+                    android:fontFamily="@font/font_regular"
+                    android:text="Summary Report"
+                    android:textColor="@color/colorMenuText"
+                    android:textSize="@dimen/_12ssp" />
+
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorMenuViewBg"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/lnrTransactionHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:gravity="center_vertical"
+                android:paddingVertical="@dimen/_15sdp"
+                android:visibility="gone"
+                android:weightSum="10">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="1.5"
+                    android:src="@drawable/ic_payment" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="8"
+                    android:fontFamily="@font/font_regular"
+                    android:text="Transaction History"
+                    android:textColor="@color/colorMenuText"
+                    android:textSize="@dimen/_12ssp" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorMenuViewBg" />
+
+
+            <LinearLayout
+                android:id="@+id/lnrCenterInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:gravity="center_vertical"
+                android:paddingVertical="@dimen/_15sdp"
+                android:weightSum="10">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:src="@drawable/ic_center_info_small" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8"
+                    android:fontFamily="@font/font_regular"
+                    android:text="Center Information"
+                    android:textColor="@color/colorMenuText"
+                    android:textSize="@dimen/_12ssp" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorMenuViewBg" />
+
+            <LinearLayout
+                android:id="@+id/lnrProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
+                android:background="?selectableItemBackground"
+                android:clickable="true"
+                android:paddingVertical="@dimen/_15sdp">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:src="@drawable/ic_profile" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8"
+                    android:fontFamily="@font/font_regular"
+                    android:text="Profile"
+                    android:textColor="@color/colorMenuText"
+                    android:textSize="@dimen/_12ssp" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorMenuViewBg" />
+
+            <LinearLayout
+                android:id="@+id/lnrAccountSetting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:gravity="center_vertical"
+                android:paddingVertical="@dimen/_15sdp"
+                android:weightSum="10">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:src="@drawable/ic_acc_setting" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8"
+                    android:fontFamily="@font/font_regular"
+                    android:text="Account Settings"
+                    android:textColor="@color/colorMenuText"
+                    android:textSize="@dimen/_12ssp" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorMenuViewBg" />
+
+
+            <LinearLayout
+                android:id="@+id/llLogout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:gravity="center_vertical"
+                android:paddingVertical="@dimen/_15sdp"
+                android:weightSum="10">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:src="@drawable/ic_sign_out" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8"
+                    android:fontFamily="@font/font_regular"
+                    android:text="Log Out"
+                    android:textColor="@color/colorMenuText"
+                    android:textSize="@dimen/_12ssp" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="0dp"
+        app:cardUseCompatPadding="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/_16sdp">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".5" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivProfileImg"
+                android:layout_width="@dimen/_34sdp"
+                android:layout_height="@dimen/_34sdp"
+                android:layout_marginStart="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:src="@drawable/ic_user_placeholder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvProfileName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:fontFamily="@font/font_semi_bold"
+                android:text="-"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintBottom_toTopOf="@id/tvLastPayment"
+                app:layout_constraintStart_toEndOf="@id/ivProfileImg"
+                app:layout_constraintTop_toTopOf="@id/ivProfileImg"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tvLastPayment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha=".5"
+                android:fontFamily="@font/font_medium"
+                android:text="Last Payment : $0"
+                android:textColor="@color/deep_sea"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintBottom_toBottomOf="@id/ivProfileImg"
+                app:layout_constraintStart_toStartOf="@id/tvProfileName"
+                app:layout_constraintTop_toBottomOf="@id/tvProfileName"
+                tools:ignore="HardcodedText" />
+
+            <ImageView
+                android:id="@+id/ivCardWallet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="@dimen/_13sdp"
+                android:src="@drawable/ic_card_wallet"
+                app:layout_constraintBottom_toBottomOf="@id/ivProfileImg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ivProfileImg"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/ivEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="?selectableItemBackground"
+                android:clickable="true"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:src="@drawable/ic_edit"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/ivProfileImg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ivProfileImg"
+                app:tint="@color/colorBlack"
+                tools:ignore="ContentDescription" />
+
+            <View
+                android:id="@+id/viewMiddle"
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_13sdp"
+                android:alpha="0.2"
+                android:background="@color/grey_500"
+                android:visibility="visible"
+                app:layout_constraintTop_toBottomOf="@+id/ivProfileImg" />
+
+            <TextView
+                android:id="@+id/tvDueOn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:fontFamily="@font/font_medium"
+                android:text="Due on"
+                android:textColor="@color/colorOrange"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toStartOf="@id/viewMiddle"
+                app:layout_constraintTop_toBottomOf="@id/viewMiddle"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tvDueOnDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:alpha=".7"
+                android:fontFamily="@font/font_regular"
+                android:text="No due date"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintStart_toStartOf="@id/tvDueOn"
+                app:layout_constraintTop_toBottomOf="@id/tvDueOn"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tvDue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/font_medium"
+                android:text="Due"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toStartOf="@id/guide1"
+                app:layout_constraintTop_toTopOf="@id/tvDueOn"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tvTotalDueAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:fontFamily="@font/font_regular"
+                android:text="$0"
+                android:textColor="@color/colorOrange"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintStart_toStartOf="@id/guide1"
+                app:layout_constraintTop_toBottomOf="@id/tvDueOn"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tvPayment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:fontFamily="@font/font_medium"
+                android:text="Payment"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toStartOf="@id/viewMiddle"
+                app:layout_constraintTop_toBottomOf="@id/tvDueOnDate"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tvPaymentAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:alpha=".7"
+                android:fontFamily="@font/font_regular"
+                android:text="$0"
+                android:textColor="@color/deep_sea"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintStart_toStartOf="@id/tvDueOn"
+                app:layout_constraintTop_toBottomOf="@id/tvPayment"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tvBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/font_medium"
+                android:text="Balance"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toStartOf="@id/guide1"
+                app:layout_constraintTop_toTopOf="@id/tvPayment"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tvBalanceAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:fontFamily="@font/font_regular"
+                android:text="-"
+                android:textColor="#FF1700"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintStart_toStartOf="@id/guide1"
+                app:layout_constraintTop_toBottomOf="@id/tvBalance"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:fontFamily="@font/font_medium"
+                android:text="Description"
+                android:textColor="@color/colroBlue"
+                android:textSize="@dimen/_12ssp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@id/viewMiddle"
+                app:layout_constraintTop_toBottomOf="@id/tvPaymentAmount"
+                tools:ignore="HardcodedText" />
+
+            <View
+                android:id="@+id/viewMiddle2"
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_13sdp"
+                android:alpha="0.2"
+                android:background="@color/grey_500"
+                android:visibility="visible"
+                app:layout_constraintTop_toBottomOf="@+id/tvDescription" />
+
+            <LinearLayout
+                android:id="@+id/llBill"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:orientation="vertical"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="@id/viewMiddle2"
+                app:layout_constraintStart_toStartOf="@id/viewMiddle2"
+                app:layout_constraintTop_toBottomOf="@id/viewMiddle2">
+
+                <TextView
+                    android:id="@+id/tvBillHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/font_medium"
+                    android:text="Bill"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/tvBillDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:alpha=".7"
+                    android:fontFamily="@font/font_regular"
+                    android:lineSpacingExtra="2dp"
+                    android:text="No Transaction found."
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintTop_toBottomOf="@id/tvBillHeading"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/consTransaction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/_10sdp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/viewMiddle2">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivProfileImgTransactionHistory"
+                    android:layout_width="@dimen/_34sdp"
+                    android:layout_height="@dimen/_34sdp"
+                    android:layout_marginStart="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:src="@drawable/image"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvProfileNameTransHistory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:fontFamily="@font/font_medium"
+                    android:text="Lana Reynolds"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintBottom_toTopOf="@id/tvRelation"
+                    app:layout_constraintStart_toEndOf="@id/ivProfileImgTransactionHistory"
+                    app:layout_constraintTop_toTopOf="@id/ivProfileImgTransactionHistory"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/tvRelation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha=".7"
+                    android:gravity="center_vertical"
+                    android:paddingVertical="@dimen/_2sdp"
+                    android:text="Paid"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintBottom_toBottomOf="@id/ivProfileImgTransactionHistory"
+                    app:layout_constraintStart_toStartOf="@id/tvProfileNameTransHistory"
+                    app:layout_constraintTop_toBottomOf="@id/tvProfileNameTransHistory"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:alpha=".5"
+                    android:fontFamily="@font/font_regular"
+                    android:text="Feb 17 2021"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_8ssp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/ivProfileImgTransactionHistory"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/ivProfileImgTransactionHistory"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/tvTransactionIDHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:fontFamily="@font/font_medium"
+                    android:text="Transaction ID"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintStart_toStartOf="@id/ivProfileImgTransactionHistory"
+                    app:layout_constraintTop_toBottomOf="@id/ivProfileImgTransactionHistory"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/tvTransactionID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:alpha=".5"
+                    android:fontFamily="@font/font_regular"
+                    android:text="pi_1ILpAIERuA1djMVYdWUaqVne"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_6ssp"
+                    app:layout_constraintStart_toStartOf="@id/tvTransactionIDHeading"
+                    app:layout_constraintTop_toBottomOf="@id/tvTransactionIDHeading"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/tvPaymentTypeHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/font_medium"
+                    android:text="Payment Type"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintStart_toStartOf="@id/guide3"
+                    app:layout_constraintTop_toTopOf="@id/tvTransactionIDHeading"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/tvPaymentType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha=".5"
+                    android:fontFamily="@font/font_regular"
+                    android:text="Online Transfer"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_6ssp"
+                    app:layout_constraintStart_toStartOf="@id/guide3"
+                    app:layout_constraintTop_toBottomOf="@id/tvPaymentTypeHeading"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/tvPaymentMethodHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:fontFamily="@font/font_medium"
+                    android:text="Payment Method"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintStart_toStartOf="@id/ivProfileImgTransactionHistory"
+                    app:layout_constraintTop_toBottomOf="@id/tvTransactionID"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/tvPaymentMethod"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:alpha=".5"
+                    android:fontFamily="@font/font_regular"
+                    android:text="Stripe"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_8ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tvPaymentMethodHeading"
+                    app:layout_constraintTop_toBottomOf="@id/tvPaymentMethodHeading"
+                    tools:ignore="HardcodedText" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

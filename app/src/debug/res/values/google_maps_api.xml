@@ -1,0 +1,24 @@
+<resources>
+    <!--
+    TODO: Before you run your application, you need a Google Maps API key.
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=26:4A:96:ED:CB:79:7F:51:D3:87:97:08:6D:20:83:34:26:18:DE:46%3Bcom.android.swaddle.google_map
+
+    You can also add your credentials to an existing key, using these values:
+
+    Package name:
+    com.android.swaddle.google_map
+
+    SHA-1 certificate fingerprint:
+    26:4A:96:ED:CB:79:7F:51:D3:87:97:08:6D:20:83:34:26:18:DE:46
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyBNegdJpdFh2aMPxZpgvXXXC_2UDNIOEKE</string>
+</resources>

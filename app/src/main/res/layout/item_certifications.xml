@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_13sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:id="@+id/tvCertificate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="First Aid/CPR certification"
+        android:fontFamily="@font/font_regular"
+        android:textSize="@dimen/_12ssp"
+        android:alpha=".7"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/colorLoginBlack"/>
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvCertificate"
+        app:layout_constraintStart_toStartOf="@id/tvCertificate"
+        android:text="02 / 04 / 2020"
+        android:textSize="@dimen/_10ssp"
+        android:fontFamily="@font/font_regular"
+        android:textColor="@color/colorLoginBlack"
+        android:alpha=".5"
+        android:layout_marginTop="@dimen/_8sdp"/>
+    <ImageView
+        android:id="@+id/ivClose"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?selectableItemBackgroundBorderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_close_red"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintTop_toBottomOf="@id/tvDate"
+        android:layout_marginTop="@dimen/_13sdp"
+        android:background="@color/martini"
+        android:alpha=".2"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

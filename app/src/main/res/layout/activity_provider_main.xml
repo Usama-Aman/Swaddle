@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.providers.ProviderMainActivity">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_above="@+id/imgDashboard"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toTopOf="@id/imgDashboard"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- <com.google.android.material.bottomnavigation.BottomNavigationView
+             android:id="@+id/bottomNavigation"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_alignParentBottom="true"
+             android:background="@color/colorWhite"
+             android:theme="@style/Widget.BottomNavigationView"
+             app:itemBackground="@color/colorWhite"
+             app:itemIconTint="@color/bg_bottom_nav"
+             app:itemTextColor="@color/colorLoginBlack"
+             app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+             app:labelVisibilityMode="labeled"
+             app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:menu="@menu/provider_bottom_nav_menu" />-->
+
+
+        <ImageView
+            android:id="@+id/imgDashboard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginBottom="5dp"
+
+
+            android:src="@drawable/ic_home"
+            app:layout_constraintBottom_toTopOf="@id/tvDashboard"
+            app:layout_constraintEnd_toStartOf="@id/imgMsg"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:tint="@color/colroBlue" />
+
+        <TextView
+            android:id="@+id/tvDashboard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/font_semi_bold"
+            android:gravity="center"
+            android:text="Dashboard"
+            android:textColor="@color/colorDashBoardBlack"
+            android:textSize="8sp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/imgDashboard"
+            app:layout_constraintStart_toStartOf="@id/imgDashboard" />
+
+
+        <View
+            android:id="@+id/viewDashboard"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/imgDashboard"
+            app:layout_constraintStart_toStartOf="@id/imgDashboard"
+            app:layout_constraintTop_toTopOf="@id/imgDashboard" />
+
+
+        <ImageView
+            android:id="@+id/imgMsg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/ic_message"
+            app:layout_constraintBottom_toTopOf="@id/tvMsg"
+
+            app:layout_constraintEnd_toStartOf="@id/imgNotification"
+            app:layout_constraintStart_toEndOf="@id/imgDashboard"
+            app:tint="@color/colorDashBoardBlack" />
+
+
+        <TextView
+            android:id="@+id/tvMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/font_semi_bold"
+            android:text="Messages"
+            android:textColor="@color/colorDashBoardBlack"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/imgMsg"
+            app:layout_constraintStart_toStartOf="@id/imgMsg" />
+
+
+        <View
+            android:id="@+id/viewMessages"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/imgMsg"
+            app:layout_constraintStart_toStartOf="@id/imgMsg"
+            app:layout_constraintTop_toTopOf="@id/imgMsg" />
+
+
+        <ImageView
+            android:id="@+id/imgNotification"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/ic_notification"
+            app:layout_constraintBottom_toTopOf="@id/tvMsg"
+            app:layout_constraintEnd_toStartOf="@id/imgMore"
+            app:layout_constraintStart_toEndOf="@id/imgMsg"
+            app:tint="@color/colorDashBoardBlack" />
+
+        <TextView
+            android:id="@+id/tvNotification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/font_semi_bold"
+            android:text="Notification"
+            android:textColor="@color/colorDashBoardBlack"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/imgMore"
+            app:layout_constraintStart_toStartOf="@id/imgNotification" />
+
+
+        <View
+            android:id="@+id/viewNotification"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/imgNotification"
+            app:layout_constraintStart_toStartOf="@id/imgNotification"
+            app:layout_constraintTop_toTopOf="@id/imgNotification" />
+
+
+        <ImageView
+            android:id="@+id/imgMore"
+            android:layout_width="0dp"
+            android:layout_height="28dp"
+            android:layout_marginEnd="15dp"
+            android:padding="3dp"
+            android:src="@drawable/ic_more"
+            app:layout_constraintBottom_toTopOf="@id/tvMsg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imgNotification"
+            app:tint="@color/colorDashBoardBlack" />
+
+        <TextView
+            android:id="@+id/tvMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/font_semi_bold"
+            android:text="More"
+            android:textColor="@color/colorDashBoardBlack"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/imgMore"
+            app:layout_constraintStart_toStartOf="@id/imgMore" />
+
+
+        <View
+            android:id="@+id/viewMore"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imgNotification"
+            app:layout_constraintTop_toTopOf="@id/imgMore" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

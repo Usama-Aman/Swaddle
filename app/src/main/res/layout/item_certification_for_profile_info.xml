@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivCertifications"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_14sdp"
+            android:src="@drawable/ic_certifications"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvCertificate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_13sdp"
+            android:layout_marginTop="@dimen/_11sdp"
+            android:alpha=".7"
+            android:fontFamily="@font/font_medium"
+            android:text="First Aid/CPR certification"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toEndOf="@id/ivCertifications"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvCompletionTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:alpha=".6"
+            android:text="Completion Date:"
+            android:textColor="@color/shuttle_gray"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintStart_toStartOf="@id/tvCertificate"
+            app:layout_constraintTop_toBottomOf="@id/tvCertificate" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:alpha=".6"
+            android:fontFamily="@font/font_regular"
+            android:text="02 / 04 / 2020"
+            android:textColor="@color/shuttle_gray"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintStart_toEndOf="@id/tvCompletionTime"
+            app:layout_constraintTop_toTopOf="@id/tvCompletionTime" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/grey_100"
+            app:layout_constraintTop_toBottomOf="@id/tvCompletionTime"
+            android:layout_marginTop="@dimen/_11sdp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
